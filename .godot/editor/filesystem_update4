@@ -1,3 +1,4 @@
-res://TileSet/Tileset.tscn
 res://BasePlayer/BasePlayer.tscn
+res://BasePlayer/BasePlayer.cs
 res://TestLevel.tscn
+res://TileSet/Tileset.tscn
