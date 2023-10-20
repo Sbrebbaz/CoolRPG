@@ -20,11 +20,19 @@ public partial class BaseEnemy : CharacterBody2D
 	{
 		Vector2 velocity = Velocity;
 		RandomNumberGenerator rand = new RandomNumberGenerator();
-		if(Position.DistanceTo(StartPos) > 100)
+		if(Position.DistanceTo(StartPos) > 100 || GetSlideCollisionCount() != 0)
 		{
-			Velocity = (StartPos - Position + new Vector2(rand.RandfRange(-50, 50), rand.RandfRange(-50, 50))).Normalized() * speed;
+			velocity = (StartPos - Position + new Vector2(rand.RandfRange(-50, 50), rand.RandfRange(-50, 50))).Normalized() * speed;
 		}
 		ManageMovementAnimation();
+
+		Velocity = velocity;
+
+		// if(GetSlideCollisionCount() != 0)
+		// {
+		// 	GD.Print("I HIT SOMETHING");
+		// 	Velocity = Vector2.Right;
+		// }
 		MoveAndSlide();
 
 		base._PhysicsProcess(delta);
