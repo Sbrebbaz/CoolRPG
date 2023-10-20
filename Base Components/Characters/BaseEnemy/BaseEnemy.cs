@@ -16,8 +16,8 @@ public partial class BaseEnemy : CharacterBody2D
 		base._Ready();
 	}
 
-    public override void _PhysicsProcess(double delta)
-    {
+	public override void _PhysicsProcess(double delta)
+	{
 		Vector2 velocity = Velocity;
 		RandomNumberGenerator rand = new RandomNumberGenerator();
 		if(Position.DistanceTo(StartPos) > 100)
@@ -27,8 +27,8 @@ public partial class BaseEnemy : CharacterBody2D
 		ManageMovementAnimation();
 		MoveAndSlide();
 
-        base._PhysicsProcess(delta);
-    }
+		base._PhysicsProcess(delta);
+	}
 
 	private void ManageMovementAnimation()
 	{

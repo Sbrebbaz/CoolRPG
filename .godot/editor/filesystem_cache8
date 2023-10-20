@@ -1,17 +1,33 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1697609785
-BaseEnemy.cs::CSharpScript::-1::1697609751::0::1::::<><>::
-icon.svg::CompressedTexture2D::2939874850719044961::1697607331::1697607388::1::::<><>::
-README.md::TextFile::-1::1697607235::0::1::::<><>::
-TestLevel.tscn::PackedScene::4369741045510509841::1697609785::0::1::::<><>::uid://c3kh2qpn1nk3u::::res://BasePlayer/BasePlayer.tscn<>uid://c48wr08p4qhfx::::res://TileSet/Tileset.tscn
-::res://Assets/::1697607331
-EnemyPlaceholder.png::CompressedTexture2D::7142544998333714314::1697607331::1697607331::1::::<><>::
-GroundTileset.png::CompressedTexture2D::2963455357232354487::1697607331::1697607331::1::::<><>::
-PlayerPlaceholder.png::CompressedTexture2D::4285623641849762567::1697607331::1697607331::1::::<><>::
-::res://BaseEnemy/::1697610082
-BaseEnemy.tscn::PackedScene::8385294714317668393::1697609785::0::1::::<><>::res://BaseEnemy/BaseEnemy.cs<>uid://c805w4rh1k3ec::::res://Assets/EnemyPlaceholder.png
-::res://BasePlayer/::1697609785
-BasePlayer.cs::CSharpScript::-1::1697610073::0::1::::<><>::
-BasePlayer.tscn::PackedScene::6759246866348101340::1697609785::0::1::::<><>::res://BasePlayer/BasePlayer.cs<>uid://b2b8uidp0evoh::::res://Assets/PlayerPlaceholder.png
-::res://TileSet/::1697608957
-Tileset.tscn::PackedScene::6877809795893580877::1697608957::0::1::::<><>::uid://bihrxalwuoyx0::::res://Assets/GroundTileset.png
+::res://::1697842224
+icon.svg::CompressedTexture2D::2939874850719044961::1697663516::1697663516::1::::<><>::
+README.md::TextFile::-1::1697663516::0::1::::<><>::
+::res://Assets/::1697663816
+EnemyPlaceholder.png::CompressedTexture2D::7142544998333714314::1697663816::1697663816::1::::<><>::
+GroundTileset.png::CompressedTexture2D::2963455357232354487::1697663816::1697663816::1::::<><>::
+PlayerPlaceholder.png::CompressedTexture2D::4285623641849762567::1697663816::1697663816::1::::<><>::
+::res://Base Components/::1697842224
+::res://Base Components/Characters/::1697841026
+::res://Base Components/Characters/BaseEnemy/::1697842220
+BaseEnemy.cs::CSharpScript::-1::1697841022::0::1::::<><>::
+BaseEnemy.tscn::PackedScene::8385294714317668393::1697842220::0::1::::<><>::res://Base Components/Characters/BaseEnemy/BaseEnemy.cs<>uid://c805w4rh1k3ec
+::res://Base Components/Characters/BasePlayer/::1697842220
+BasePlayer.cs::CSharpScript::-1::1697842083::0::1::::<><>::
+BasePlayer.tscn::PackedScene::2276945026155519784::1697842220::0::1::::<><>::res://Base Components/Characters/BasePlayer/BasePlayer.cs<>uid://b2b8uidp0evoh
+::res://Base Components/Test Scenes/::1697842224
+Base-UI.tscn::PackedScene::6115778456382969273::1697841504::0::1::::<><>::uid://yn5lgvng6ehm::::res://UI/Drop-down/drop_down_menu.tscn<>uid://cjysf0xx5el5n::::res://UI/Button/BaseButton.tscn
+TestLevel.tscn::PackedScene::4369741045510509841::1697842224::0::1::::<><>::uid://7o77mochmcl1::::res://Base Components/Characters/BasePlayer/BasePlayer.tscn<>uid://c48wr08p4qhfx::::res://Base Components/TileSet/Tileset.tscn<>uid://drp5txev7oc14::::res://Base Components/Characters/BaseEnemy/BaseEnemy.tscn
+::res://Base Components/TileSet/::1697663816
+Tileset.tscn::PackedScene::6877809795893580877::1697663816::0::1::::<><>::uid://bihrxalwuoyx0::::res://Assets/GroundTileset.png
+::res://Base Components/UI/::0
+::res://Base Components/UI/Button/::0
+::res://Base Components/UI/ComboBox/::0
+::res://Base Components/UI/Menu/::0
+::res://UI/::1697841565
+::res://UI/Button/::1697842059
+BaseButton.tscn::PackedScene::5455189210764779989::1697842059::0::1::::<><>::
+::res://UI/ComboBox/::1697842067
+BaseComboBox.tscn::PackedScene::1713210659812397506::1697842067::0::1::::<><>::
+::res://UI/Menu/::1697842197
+MainMenu.cs::CSharpScript::-1::1697842092::0::1::::<><>::
+MainMenu.tscn::PackedScene::6115778456382969273::1697842197::0::1::::<><>::res://UI/Menu/MainMenu.cs<>uid://cjysf0xx5el5n::::res://UI/Button/BaseButton.tscn

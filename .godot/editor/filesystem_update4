@@ -1,7 +1,17 @@
-res://BasePlayer/BasePlayer.tscn
-res://BasePlayer/BasePlayer.cs
-res://TestLevel.tscn
-res://TileSet/Tileset.tscn
-res://BaseEnemy.tscn
-res://BaseEnemy/BaseEnemy.tscn
-res://BaseEnemy/BaseEnemy.cs
+res://Test Scenes/TestLevel.tscn
+res://UI/Button/button.tscn
+res://UI/Drop-down/drop_down_menu.tscn
+res://UI/Button/BaseButton.tscn
+res://UI/ComboBox/BaseComboBox.tscn
+res://UI/Menu/button.tscn
+res://UI/Menu/MainMenu.tscn
+res://UI/Menu/MainMenu.cs
+res://Characters/BasePlayer/BasePlayer.cs
+res://Base Components/UI/Menu/MainMenu.tscn
+res://Base Components/Characters/BaseEnemy/BaseEnemy.tscn
+res://Base Components/Characters/BasePlayer/BasePlayer.tscn
+res://Base Components/Test Scenes/TestLevel.tscn
+res://Base Components/TileSet/Tileset.tscn
+res://Base Components/Characters/BaseEnemy/BaseEnemy.cs
+res://Base Components/Characters/BasePlayer/BasePlayer.cs
+res://Base Components/UI/Menu/MainMenu.cs
