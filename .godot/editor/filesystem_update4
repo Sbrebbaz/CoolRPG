@@ -1,7 +1,7 @@
-res://BasePlayer/BasePlayer.tscn
-res://BasePlayer/BasePlayer.cs
 res://TestLevel.tscn
-res://TileSet/Tileset.tscn
-res://BaseEnemy.tscn
-res://BaseEnemy/BaseEnemy.tscn
+res://BasePlayer/BasePlayer.cs
 res://BaseEnemy/BaseEnemy.cs
+res://BaseEnemy/BaseEnemy.tscn
+res://BaseDialog.tscn
+res://BaseDialog/BaseDialog.tscn
+res://BaseDialog/BaseDialog.cs
