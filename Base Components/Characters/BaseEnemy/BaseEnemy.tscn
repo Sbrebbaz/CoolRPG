@@ -1,29 +1,29 @@
 [gd_scene load_steps=10 format=3 uid="uid://drp5txev7oc14"]
 
-[ext_resource type="Script" path="res://BaseEnemy/BaseEnemy.cs" id="1_fdkiu"]
-[ext_resource type="Texture2D" uid="uid://c805w4rh1k3ec" path="res://Assets/EnemyPlaceholder.png" id="2_ebdx4"]
+[ext_resource type="Script" path="res://Base Components/Characters/BaseEnemy/BaseEnemy.cs" id="1_1qjs1"]
+[ext_resource type="Texture2D" uid="uid://c805w4rh1k3ec" path="res://Assets/EnemyPlaceholder.png" id="2_tmtm2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwgij"]
 size = Vector2(32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_if2lb"]
-atlas = ExtResource("2_ebdx4")
+atlas = ExtResource("2_tmtm2")
 region = Rect2(0, 48, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1fj5b"]
-atlas = ExtResource("2_ebdx4")
+atlas = ExtResource("2_tmtm2")
 region = Rect2(0, 48, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wutl4"]
-atlas = ExtResource("2_ebdx4")
+atlas = ExtResource("2_tmtm2")
 region = Rect2(0, 0, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hip1l"]
-atlas = ExtResource("2_ebdx4")
+atlas = ExtResource("2_tmtm2")
 region = Rect2(0, 96, 32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x1fwl"]
-atlas = ExtResource("2_ebdx4")
+atlas = ExtResource("2_tmtm2")
 region = Rect2(0, 144, 32, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nmjep"]
@@ -71,7 +71,7 @@ animations = [{
 
 [node name="BaseEnemy" type="CharacterBody2D"]
 position = Vector2(576, 320)
-script = ExtResource("1_fdkiu")
+script = ExtResource("1_1qjs1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mwgij")

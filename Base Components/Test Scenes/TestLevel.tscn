@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3iy85cckkxd6"]
 
-[ext_resource type="PackedScene" uid="uid://c3kh2qpn1nk3u" path="res://BasePlayer/BasePlayer.tscn" id="1_41d1i"]
-[ext_resource type="PackedScene" uid="uid://c48wr08p4qhfx" path="res://TileSet/Tileset.tscn" id="1_grvbh"]
-[ext_resource type="PackedScene" uid="uid://drp5txev7oc14" path="res://BaseEnemy/BaseEnemy.tscn" id="3_qxp0u"]
+[ext_resource type="PackedScene" uid="uid://7o77mochmcl1" path="res://Base Components/Characters/BasePlayer/BasePlayer.tscn" id="1_41d1i"]
+[ext_resource type="PackedScene" uid="uid://c48wr08p4qhfx" path="res://Base Components/TileSet/Tileset.tscn" id="1_grvbh"]
+[ext_resource type="PackedScene" uid="uid://drp5txev7oc14" path="res://Base Components/Characters/BaseEnemy/BaseEnemy.tscn" id="3_qxp0u"]
 
 [node name="TestLevel" type="Node2D"]
 

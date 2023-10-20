@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://cter8iftf6vs0"]
+
+[ext_resource type="PackedScene" uid="uid://yn5lgvng6ehm" path="res://Base Components/UI/ComboBox/BaseComboBox.tscn" id="1_4a5ol"]
+[ext_resource type="PackedScene" uid="uid://cjysf0xx5el5n" path="res://Base Components/UI/Button/BaseButton.tscn" id="2_4luso"]
+
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.02353)
+
+[node name="VFlowContainer" type="VFlowContainer" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 256.0
+offset_right = 602.0
+offset_bottom = 344.0
+alignment = 1
+
+[node name="DropDownMenu" parent="VFlowContainer" instance=ExtResource("1_4a5ol")]
+layout_mode = 2
+
+[node name="Button" parent="VFlowContainer" instance=ExtResource("2_4luso")]
+layout_mode = 2
