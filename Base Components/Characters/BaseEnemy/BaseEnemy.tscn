@@ -1,81 +1,40 @@
-[gd_scene load_steps=10 format=3 uid="uid://drp5txev7oc14"]
+[gd_scene load_steps=6 format=3 uid="uid://drp5txev7oc14"]
 
 [ext_resource type="Script" path="res://Base Components/Characters/BaseEnemy/BaseEnemy.cs" id="1_1qjs1"]
-[ext_resource type="Texture2D" uid="uid://c805w4rh1k3ec" path="res://Assets/EnemyPlaceholder.png" id="2_tmtm2"]
+[ext_resource type="SpriteFrames" uid="uid://i4vw7iyxilu7" path="res://Resources/EnemyVariations/EnemyGray.tres" id="2_m2fuw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwgij"]
 size = Vector2(32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_if2lb"]
-atlas = ExtResource("2_tmtm2")
-region = Rect2(0, 48, 32, 48)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3s2f3"]
+radius = 200.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1fj5b"]
-atlas = ExtResource("2_tmtm2")
-region = Rect2(0, 48, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wutl4"]
-atlas = ExtResource("2_tmtm2")
-region = Rect2(0, 0, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hip1l"]
-atlas = ExtResource("2_tmtm2")
-region = Rect2(0, 96, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x1fwl"]
-atlas = ExtResource("2_tmtm2")
-region = Rect2(0, 144, 32, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nmjep"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_if2lb")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1fj5b")
-}],
-"loop": true,
-"name": &"walk_down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wutl4")
-}],
-"loop": true,
-"name": &"walk_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hip1l")
-}],
-"loop": true,
-"name": &"walk_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x1fwl")
-}],
-"loop": true,
-"name": &"walk_up",
-"speed": 5.0
-}]
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5uio"]
+radius = 32.0
 
 [node name="BaseEnemy" type="CharacterBody2D"]
-position = Vector2(576, 320)
 script = ExtResource("1_1qjs1")
+enemySprite = ExtResource("2_m2fuw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mwgij")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_nmjep")
+sprite_frames = ExtResource("2_m2fuw")
 animation = &"idle"
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+
+[node name="PlayerDetectionArea" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource("CircleShape2D_3s2f3")
+debug_color = Color(0.964706, 0, 0.498039, 0.419608)
+
+[node name="HitDetection" type="Area2D" parent="."]
+
+[node name="HitDetectionArea" type="CollisionShape2D" parent="HitDetection"]
+shape = SubResource("CircleShape2D_x5uio")
+debug_color = Color(0.180392, 0.643137, 0, 0.419608)
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_detection_body_exited"]
+[connection signal="body_entered" from="HitDetection" to="." method="_on_hit_detection_body_entered"]
