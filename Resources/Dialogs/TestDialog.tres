@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dybn43s6veioo"]
+
+[ext_resource type="Script" path="res://Scripts/Dialog/DialogBase.cs" id="1_gmvpl"]
+
+[resource]
+script = ExtResource("1_gmvpl")
+DialogLines = Array[Resource]([])

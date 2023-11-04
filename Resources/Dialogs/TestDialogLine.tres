@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dprhabobykg4o"]
+
+[ext_resource type="Script" path="res://Scripts/Dialog/DialogLineBase.cs" id="1_140ov"]
+
+[resource]
+script = ExtResource("1_140ov")
+Title = "HELLO"
+Text = "Hello"
