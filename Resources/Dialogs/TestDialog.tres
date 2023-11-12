@@ -4,4 +4,4 @@
 
 [resource]
 script = ExtResource("1_gmvpl")
-DialogLines = Array[Resource]([])
+DialogLines = Array[Resource]([null, null])

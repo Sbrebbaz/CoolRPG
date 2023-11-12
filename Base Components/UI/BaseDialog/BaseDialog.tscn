@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpp87idmmrfbo"]
 
-[ext_resource type="Script" path="res://Base Components/UI/BaseDialog/BaseDialog.cs" id="1_dfwbd"]
+[ext_resource type="Script" path="res://Scripts/Dialog/DialogLineCore.cs" id="1_dfwbd"]
+
 
 [node name="Dialog" type="RichTextLabel"]
 custom_minimum_size = Vector2(11, 0)
