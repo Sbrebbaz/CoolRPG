@@ -2,31 +2,30 @@ using Godot;
 using System;
 using System.Diagnostics;
 
-public partial class BasePlayer : CharacterBody2D
+public partial class PlayerCore : CharacterBody2D
 {
-	public const float BaseSpeed = 300.0f;
-	public const float RunningMultiplier = 1.5f;
-	public const float JumpVelocity = -400.0f;
+	[Export] public PlayerBase PlayerBase { get; set; }
 
-	public AnimatedSprite2D AnimatedSprite2D { get; set; }
+	private AnimatedSprite2D AnimatedSprite2D { get; set; }
 
 	public override void _Ready()
 	{
-		AnimatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		base._Ready();
+		AnimatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		AnimatedSprite2D.SpriteFrames = PlayerBase.Sprite;
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		float movementSpeed = BaseSpeed;
+		float movementSpeed = PlayerBase.Speed;
 		AnimatedSprite2D.SpeedScale = 1f;
 
 		if (Input.IsActionPressed("ui_run"))
 		{
-			movementSpeed *= RunningMultiplier;
-			AnimatedSprite2D.SpeedScale *= RunningMultiplier;
+			movementSpeed *= PlayerBase.RunningMultiplier;
+			AnimatedSprite2D.SpeedScale *= PlayerBase.RunningMultiplier;
 		}
 
 		ManageMovementAnimation(direction);

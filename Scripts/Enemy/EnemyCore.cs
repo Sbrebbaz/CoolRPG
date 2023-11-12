@@ -2,18 +2,11 @@ using Godot;
 using System;
 using System.Diagnostics;
 
-public partial class BaseEnemy : CharacterBody2D
+public partial class EnemyCore : CharacterBody2D
 {
-	[Export] public float PlayerDetectionArea = 200f;
-	[Export] public float PlayerHitArea = 32f;
-	[Export] public float RoamingArea = 100f;
-	[Export] public float Speed = 100f;
-	[Export] public SpriteFrames enemySprite { get; set; }
+	[Export] public EnemyBase EnemyBase { get; set; }
 
-	[Signal] public delegate void PlayerHitDetectionEventHandler();
-	[Signal] public delegate void PlayerCloseDetectionEventHandler();
-
-	public BasePlayer PlayerDetected;
+	public PlayerCore PlayerDetected;
 	public Vector2 StartingPosition;
 
 	private AnimatedSprite2D _AnimatedSprite2D;
@@ -28,12 +21,12 @@ public partial class BaseEnemy : CharacterBody2D
 		Debug.WriteLine(StartingPosition);
 
 		_AnimatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-		_AnimatedSprite2D.SpriteFrames = enemySprite;
+		_AnimatedSprite2D.SpriteFrames = EnemyBase.Sprite;
 		_AnimatedSprite2D.Play("idle");
-		Velocity = Vector2.Left * Speed;
+		Velocity = Vector2.Left * EnemyBase.Speed;
 
-		((CircleShape2D)GetNode<Area2D>("PlayerDetection").GetNode<CollisionShape2D>("PlayerDetectionArea").Shape).Radius = PlayerDetectionArea;
-		((CircleShape2D)GetNode<Area2D>("HitDetection").GetNode<CollisionShape2D>("HitDetectionArea").Shape).Radius = PlayerHitArea;
+		((CircleShape2D)GetNode<Area2D>("PlayerDetection").GetNode<CollisionShape2D>("PlayerDetectionArea").Shape).Radius = EnemyBase.PlayerDetectionArea;
+		((CircleShape2D)GetNode<Area2D>("HitDetection").GetNode<CollisionShape2D>("HitDetectionArea").Shape).Radius = EnemyBase.PlayerHitArea;
 
 		base._Ready();
 	}
@@ -41,7 +34,7 @@ public partial class BaseEnemy : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		//Retrieve current direction
-		Vector2 direction = Velocity / Speed;
+		Vector2 direction = Velocity / EnemyBase.Speed;
 
 		//Player detected
 		//Move towards player
@@ -54,10 +47,12 @@ public partial class BaseEnemy : CharacterBody2D
 		else
 		{
 			if (Position.DistanceTo(StartingPosition) < 1
-				|| Position.DistanceTo(StartingPosition) > RoamingArea
+				|| Position.DistanceTo(StartingPosition) > EnemyBase.RoamingArea
 				|| GetSlideCollisionCount() > 0)
 			{
-				Vector2 newDirection = new Vector2(_RNG.RandfRange(0, RoamingArea) - RoamingArea / 2, _RNG.RandfRange(0, RoamingArea) - RoamingArea / 2);
+				Vector2 newDirection = new Vector2(
+					_RNG.RandfRange(0, EnemyBase.RoamingArea) - EnemyBase.RoamingArea / 2,
+					_RNG.RandfRange(0, EnemyBase.RoamingArea) - EnemyBase.RoamingArea / 2);
 
 				direction = (StartingPosition - Position + newDirection).Normalized();
 			}
@@ -67,7 +62,7 @@ public partial class BaseEnemy : CharacterBody2D
 		ManageMovementAnimation();
 
 		//New direction and move management
-		Velocity = direction * Speed;
+		Velocity = direction * EnemyBase.Speed;
 		MoveAndSlide();
 		base._PhysicsProcess(delta);
 	}
@@ -98,10 +93,10 @@ public partial class BaseEnemy : CharacterBody2D
 	/// <param name="body">Body that entered the area</param>
 	private void _on_player_detection_body_entered(Node2D body)
 	{
-		if (body is BasePlayer)
+		if (body is PlayerCore)
 		{
-			PlayerDetected = (BasePlayer)body;
-			EmitSignal(SignalName.PlayerCloseDetection);
+			PlayerDetected = (PlayerCore)body;
+			EmitSignal(EnemyBase.SignalName.PlayerCloseDetection);
 		}
 	}
 
@@ -112,7 +107,7 @@ public partial class BaseEnemy : CharacterBody2D
 	/// <param name="body">Body that exited the area</param>
 	private void _on_player_detection_body_exited(Node2D body)
 	{
-		if (body is BasePlayer)
+		if (body is PlayerCore)
 		{
 			PlayerDetected = null;
 		}
@@ -125,6 +120,6 @@ public partial class BaseEnemy : CharacterBody2D
 	/// <param name="body">Body that entered the area</param>
 	private void _on_hit_detection_body_entered(Node2D body)
 	{
-		EmitSignal(SignalName.PlayerHitDetection);
+		EmitSignal(EnemyBase.SignalName.PlayerHitDetection);
 	}
 }

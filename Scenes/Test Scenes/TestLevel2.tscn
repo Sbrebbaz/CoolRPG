@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://c48wr08p4qhfx" path="res://Base Components/TileSet/Tileset.tscn" id="1_1w6a7"]
 [ext_resource type="PackedScene" uid="uid://7o77mochmcl1" path="res://Base Components/Characters/BasePlayer/BasePlayer.tscn" id="2_kwb2y"]
 [ext_resource type="PackedScene" uid="uid://drp5txev7oc14" path="res://Base Components/Characters/BaseEnemy/BaseEnemy.tscn" id="3_1hs4s"]
-[ext_resource type="SpriteFrames" uid="uid://bvskv0jaisuo7" path="res://Resources/EnemyVariations/EnemyRed.tres" id="4_aq0tx"]
-[ext_resource type="SpriteFrames" uid="uid://cltsx6c7lu4mw" path="res://Resources/EnemyVariations/EnemyBlue.tres" id="5_7idg5"]
-[ext_resource type="SpriteFrames" uid="uid://c02n177a6jv5j" path="res://Resources/EnemyVariations/EnemyGreen.tres" id="6_3ctw3"]
+[ext_resource type="SpriteFrames" uid="uid://deac0kng4yv54" path="res://Resources/Enemies/BaseEnemy.tres" id="4_aq0tx"]
+[ext_resource type="SpriteFrames" uid="uid://deac0kng4yv54" path="res://Resources/Enemies/BaseEnemy.tres" id="5_7idg5"]
+[ext_resource type="SpriteFrames" uid="uid://deac0kng4yv54" path="res://Resources/Enemies/BaseEnemy.tres" id="6_3ctw3"]
 
 [node name="TestLevel" type="Node2D"]
 

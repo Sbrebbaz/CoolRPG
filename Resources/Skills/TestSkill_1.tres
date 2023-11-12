@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://3bwvmrjvtesa"]
+
+[ext_resource type="Script" path="res://Scripts/Skills/SkillBase.cs" id="1_4y4hp"]
+
+[resource]
+script = ExtResource("1_4y4hp")
+SkillName = "Joe"
+Description = "Mama"
+Value = 69
+Type = 32

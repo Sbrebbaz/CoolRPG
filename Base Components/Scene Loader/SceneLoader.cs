@@ -7,7 +7,7 @@ public partial class SceneLoader : Node2D
 
 	private void _on_area_2d_body_entered(Node2D body)
 	{
-		if (body is BasePlayer)
+		if (body is PlayerCore)
 		{
 			GetTree().ChangeSceneToPacked(SceneToLoad);
 		}
