@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://rffsit41piv4"]
+
+[ext_resource type="Script" path="res://World/MainMenu/MainMenu.cs" id="1_7q87r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jhn5r"]
+font_size = 70
+font_color = Color(0, 0, 0, 1)
+outline_size = 3
+
+[node name="MainMenu" type="MarginContainer"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -174.5
+offset_right = 174.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+script = ExtResource("1_7q87r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "COOL RPG"
+label_settings = SubResource("LabelSettings_jhn5r")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="ContinueButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "CONTINUE"
+
+[node name="NewGameButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "NEW GAME"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

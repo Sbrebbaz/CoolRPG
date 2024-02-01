@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dji50voirge14"]
+
+[ext_resource type="PackedScene" uid="uid://csn6udio2rubg" path="res://World/TestLevel/TestLevelMap.tscn" id="1_33xb8"]
+[ext_resource type="PackedScene" uid="uid://oj378wnpvf2b" path="res://Characters/Player/Player.tscn" id="2_bl1wh"]
+[ext_resource type="PackedScene" uid="uid://d0o4v736hm8ex" path="res://Characters/Enemy/Enemy.tscn" id="3_6nyn6"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="TestLevel" parent="." instance=ExtResource("1_33xb8")]
+
+[node name="Player" parent="." instance=ExtResource("2_bl1wh")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_6nyn6")]
+position = Vector2(-104, 104)

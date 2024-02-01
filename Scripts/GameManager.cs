@@ -1,28 +1,18 @@
 using Godot;
-using static CoolRPG.Scripts.Constants;
-using static CoolRPG.Scripts.Requirements;
+using System;
+using static Enumerators;
 
-namespace CoolRPG.Scripts
+public partial class GameManager : Node
 {
-	internal partial class GameManager : Node
+	private SceneNavigator _sceneNavigator;
+
+	public override void _Ready()
 	{
-		public SaveFileModel SaveFile_1 { get; set; } = new SaveFileModel(SaveFileName_1);
-		public SaveFileModel SaveFile_2 { get; set; } = new SaveFileModel(SaveFileName_2);
-		public SaveFileModel SaveFile_3 { get; set; } = new SaveFileModel(SaveFileName_3);
+		_sceneNavigator = GetNode<SceneNavigator>("/root/SceneNavigator");
+	}
 
-		public override void _Ready()
-		{
-			CreateBaseFolders();
-			LoadSaveData();
-			base._Ready();
-		}
-
-		private void LoadSaveData()
-		{
-			SaveFile_1.LoadFile();
-			SaveFile_2.LoadFile();
-			SaveFile_3.LoadFile();
-		}
-
+	public void NavigateToGameState(GameState gameState)
+	{
+		_sceneNavigator.NavigateToGameState(gameState);
 	}
 }
