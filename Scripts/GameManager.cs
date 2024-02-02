@@ -17,4 +17,9 @@ public partial class GameManager : Node
 	{
 		_sceneNavigator.NavigateToGameState(gameState);
 	}
+
+	public void ShowDialog(DialogBase dialog)
+	{
+		_dialogManager.ShowDialog(dialog);
+	}
 }

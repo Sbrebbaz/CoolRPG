@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bammt4mfutdpj"
-path="res://.godot/imported/TestLevelTileMap.png-31afe35b5144d61af1aec0596a1987e6.ctex"
+uid="uid://cqyf2qfs63pf"
+path="res://.godot/imported/TestLevelTileMap.png-4c6e78763847ad26d3d908b9937ea3cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/TestLevel/TestLevelTileMap.png"
-dest_files=["res://.godot/imported/TestLevelTileMap.png-31afe35b5144d61af1aec0596a1987e6.ctex"]
+source_file="res://Assets/Tiles/TestTiles/TestLevelTileMap.png"
+dest_files=["res://.godot/imported/TestLevelTileMap.png-4c6e78763847ad26d3d908b9937ea3cc.ctex"]
 
 [params]
 

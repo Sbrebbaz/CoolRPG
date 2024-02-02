@@ -8,25 +8,6 @@ public partial class DialogManager : Node
 	private Camera2D _currentCamera;
 	private DialogBase _currentDialog = null;
 
-	public override void _Process(double delta)
-	{
-		if (Input.IsActionJustPressed("ui_text_delete"))
-		{
-			if (_dialog != null)
-			{
-				try
-				{
-					_dialog.QueueFree();
-				}
-				catch { }
-			}
-			_dialog = ResourceLoader.Load<PackedScene>("res://World/Dialog/Dialog.tscn").Instantiate<Dialog>();
-			DialogBase dialog = ResourceLoader.Load<DialogBase>("res://Resources/Instances/TestDialog.tres");
-			dialog.ResetDialog();
-			ShowDialog(dialog);
-		}
-	}
-
 	public void ShowDialog(DialogBase dialog)
 	{
 		_currentDialog = dialog;
