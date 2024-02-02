@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://blldxivseyi70"]
 
-[ext_resource type="Script" path="res://World/Dialog/Dialog.cs" id="1_gk0g2"]
+[ext_resource type="Script" path="res://Scenes/Dialog/Dialog.cs" id="1_gk0g2"]
 [ext_resource type="Texture2D" uid="uid://0o62r2wu40pi" path="res://Assets/test images/1.png" id="2_4l7ci"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pe5y3"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdbigu4icpani"]
 
-[ext_resource type="Script" path="res://World/NewGame/NewGame.cs" id="1_jynsl"]
+[ext_resource type="Script" path="res://Scenes/NewGame/NewGame.cs" id="1_jynsl"]
 
 [node name="NewGame" type="MarginContainer"]
 anchors_preset = 15

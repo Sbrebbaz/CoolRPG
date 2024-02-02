@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ck3w8x8vd8rvw"]
 
-[ext_resource type="Script" path="res://World/Options/Options.cs" id="1_koyw6"]
+[ext_resource type="Script" path="res://Scenes/Options/Options.cs" id="1_koyw6"]
 
 [node name="Options" type="MarginContainer"]
 anchors_preset = 15
