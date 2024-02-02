@@ -12,12 +12,17 @@ public partial class DialogManager : Node
 	{
 		if (Input.IsActionJustPressed("ui_text_delete"))
 		{
-			DialogBase dialog = new DialogBase();
-
-			dialog.DialogLines.Add(new DialogLineBase("Painter beef", "Hello!"));
-			dialog.DialogLines.Add(new DialogLineBase("Cool beef", "Ciao!"));
-			dialog.DialogLines.Add(new DialogLineBase("Sbrebbaz", "Bonjour!"));
-
+			if (_dialog != null)
+			{
+				try
+				{
+					_dialog.QueueFree();
+				}
+				catch { }
+			}
+			_dialog = ResourceLoader.Load<PackedScene>("res://World/Dialog/Dialog.tscn").Instantiate<Dialog>();
+			DialogBase dialog = ResourceLoader.Load<DialogBase>("res://Resources/Instances/TestDialog.tres");
+			dialog.ResetDialog();
 			ShowDialog(dialog);
 		}
 	}
@@ -25,6 +30,7 @@ public partial class DialogManager : Node
 	public void ShowDialog(DialogBase dialog)
 	{
 		_currentDialog = dialog;
+
 		ShowDialog(_currentDialog.GetCurrentLine());
 	}
 
@@ -50,10 +56,14 @@ public partial class DialogManager : Node
 		_currentCamera = GetViewport().GetCamera2D();
 		if (_dialog != null)
 		{
-			_currentCamera.RemoveChild(_dialog);
+			try
+			{
+				_dialog.QueueFree();
+			}
+			catch { }
 		}
 		_dialog = ResourceLoader.Load<PackedScene>("res://World/Dialog/Dialog.tscn").Instantiate<Dialog>();
-		_dialog.SetText(dialogLineData);
+		_dialog.SetDialog(dialogLineData);
 		_currentCamera.AddChild(_dialog);
 		_dialog.TreeExited += _dialog_TreeExited;
 	}

@@ -2,6 +2,7 @@ using Godot;
 using Godot.Collections;
 using System;
 
+[GlobalClass]
 public partial class DialogBase : Resource
 {
 	[Export] public Array<DialogLineBase> DialogLines { get; set; }
@@ -12,10 +13,15 @@ public partial class DialogBase : Resource
 		DialogLines = new Array<DialogLineBase>();
 	}
 
+	public void ResetDialog()
+	{
+		_dialogLineIndex = 0;
+	}
+
 	public int GetNextIndex()
 	{
 		_dialogLineIndex++;
-		if (_dialogLineIndex > DialogLines.Count)
+		if (_dialogLineIndex >= DialogLines.Count)
 		{
 			_dialogLineIndex = -1;
 		}
