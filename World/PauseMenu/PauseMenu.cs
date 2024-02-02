@@ -2,7 +2,7 @@ using Godot;
 using System;
 using static Enumerators;
 
-public partial class PauseMenu : MarginContainer
+public partial class PauseMenu : CanvasLayer
 {
 	private GameManager _gameManager;
 

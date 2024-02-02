@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://blldxivseyi70"]
+
+[ext_resource type="Script" path="res://World/Dialog/Dialog.cs" id="1_gk0g2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pe5y3"]
+bg_color = Color(0.988235, 0.988235, 0.988235, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 4
+
+[node name="Dialog" type="CanvasLayer"]
+script = ExtResource("1_gk0g2")
+
+[node name="Panel" type="Panel" parent="."]
+offset_top = 504.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pe5y3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+top_level = true
+layout_mode = 2
+anchor_top = 0.778
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -0.144043
+offset_right = -8.0
+alignment = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "TITLE
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 20
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+fit_content = true

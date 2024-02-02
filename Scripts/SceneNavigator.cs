@@ -12,8 +12,7 @@ public partial class SceneNavigator : Node
 	public override void _Ready()
 	{
 		_currentGameState = GameState.MainMenu;
-		_pauseMenu = GetNode<PauseMenu>("/root/PauseMenu");
-		_pauseMenu.Visible = false;
+		_pauseMenu = ResourceLoader.Load<PackedScene>("res://World/PauseMenu/PauseMenu.tscn").Instantiate<PauseMenu>();
 	}
 
 	public void NavigateToGameState(GameState gameStateToNavigateTo)
@@ -52,14 +51,14 @@ public partial class SceneNavigator : Node
 				case GameState.Pause:
 					{
 						_currentCamera = GetViewport().GetCamera2D();
-						_currentCamera.Enabled = false;
-						_pauseMenu.Visible = true;
+						//_currentCamera.Enabled = false;
+						AddChild(_pauseMenu);
 						break;
 					}
 				case GameState.Unpause:
 					{
 						_currentCamera.Enabled = true;
-						_pauseMenu.Visible = false;
+						RemoveChild(_pauseMenu);
 						break;
 					}
 				case GameState.Quit:

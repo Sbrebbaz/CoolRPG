@@ -2,16 +2,15 @@
 
 [ext_resource type="Script" path="res://World/PauseMenu/PauseMenu.cs" id="1_45tso"]
 
-[node name="PauseMenu" type="MarginContainer"]
+[node name="PauseMenu" type="CanvasLayer"]
+script = ExtResource("1_45tso")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_45tso")
-
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 2
 
 [node name="InnerMarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2

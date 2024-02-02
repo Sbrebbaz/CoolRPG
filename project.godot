@@ -18,9 +18,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-PauseMenu="res://World/PauseMenu/PauseMenu.tscn"
 GameManager="*res://Scripts/GameManager.cs"
 SceneNavigator="*res://Scripts/SceneNavigator.cs"
+DialogManager="*res://Scripts/DialogManager.cs"
 
 [display]
 
