@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vvu0oq5vp1ep"
-path="res://.godot/imported/ReaperWalkSheet.png-8eeef1594a91bd92de8132969e1154c0.ctex"
+uid="uid://dcniqrsqfvtwp"
+path="res://.godot/imported/Enemy.png-0c3d793856881f27dd475120844f5bb3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Player/ReaperWalkSheet.png"
-dest_files=["res://.godot/imported/ReaperWalkSheet.png-8eeef1594a91bd92de8132969e1154c0.ctex"]
+source_file="res://Assets/Characters sprites/Enemy.png"
+dest_files=["res://.godot/imported/Enemy.png-0c3d793856881f27dd475120844f5bb3.ctex"]
 
 [params]
 

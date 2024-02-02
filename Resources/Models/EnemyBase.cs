@@ -2,6 +2,7 @@ using Godot;
 using Godot.Collections;
 using static Enumerators;
 
+[GlobalClass]
 public partial class EnemyBase : Resource
 {
 	[Export] public string CharacterName { get; set; } = string.Empty;

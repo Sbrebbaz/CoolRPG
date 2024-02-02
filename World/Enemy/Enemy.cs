@@ -15,19 +15,19 @@ public partial class Enemy : CharacterBody2D
 	public Player PlayerDetected;
 	public Vector2 StartingPosition;
 
-	private AnimatedSprite2D _AnimatedSprite2D;
-	private RandomNumberGenerator _RNG;
+	private AnimatedSprite2D _animatedSprite2D;
+	private RandomNumberGenerator _randomNumberGeneration;
 
 	public override void _Ready()
 	{
-		_RNG = new RandomNumberGenerator();
+		_randomNumberGeneration = new RandomNumberGenerator();
 
 		StartingPosition = Position;
 
 		Debug.WriteLine(StartingPosition);
 
-		_AnimatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-		_AnimatedSprite2D.Play("idle");
+		_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_animatedSprite2D.Play("idle");
 		Velocity = Vector2.Left * BaseSpeed;
 
 		((CircleShape2D)GetNode<Area2D>("PlayerDetection").GetNode<CollisionShape2D>("PlayerDetectionArea").Shape).Radius = PlayerDetectionArea;
@@ -56,8 +56,8 @@ public partial class Enemy : CharacterBody2D
 				|| GetSlideCollisionCount() > 0)
 			{
 				Vector2 newDirection = new Vector2(
-					_RNG.RandfRange(0, RoamingArea) - RoamingArea / 2,
-					_RNG.RandfRange(0, RoamingArea) - RoamingArea / 2);
+					_randomNumberGeneration.RandfRange(0, RoamingArea) - RoamingArea / 2,
+					_randomNumberGeneration.RandfRange(0, RoamingArea) - RoamingArea / 2);
 
 				direction = (StartingPosition - Position + newDirection).Normalized();
 			}
@@ -79,15 +79,15 @@ public partial class Enemy : CharacterBody2D
 	{
 		if (Velocity.Abs().X > Velocity.Abs().Y)
 		{
-			_AnimatedSprite2D.Play(Velocity.X > 0 ? "walk_right" : "walk_left");
+			_animatedSprite2D.Play(Velocity.X > 0 ? "walk_right" : "walk_left");
 		}
 		else if (Velocity.Abs().X < Velocity.Abs().Y)
 		{
-			_AnimatedSprite2D.Play(Velocity.Y > 0 ? "walk_down" : "walk_up");
+			_animatedSprite2D.Play(Velocity.Y > 0 ? "walk_down" : "walk_up");
 		}
 		else
 		{
-			_AnimatedSprite2D.Play("idle");
+			_animatedSprite2D.Play("idle");
 		}
 	}
 
@@ -125,6 +125,11 @@ public partial class Enemy : CharacterBody2D
 	/// <param name="body">Body that entered the area</param>
 	private void _on_hit_detection_body_entered(Node2D body)
 	{
-		EmitSignal(SignalName.PlayerHitDetection);
+		if (body is Player)
+		{
+			EmitSignal(SignalName.PlayerHitDetection);
+			//TODO UPDATE TO START A PLAYER BATTLE !
+			QueueFree();
+		}
 	}
 }

@@ -1,11 +1,9 @@
 ﻿using Godot;
 using Godot.Collections;
 
-namespace CoolRPG.Scripts
+[GlobalClass]
+public partial class PartyData : Resource
 {
-	public partial class PartyData : Resource
-	{
-		[Export] public Array<PlayerBase> Players { get; set; }
-		[Export] public InventoryData Inventory { get; set; }
-	}
+	[Export] public Array<PlayerBase> Players { get; set; }
+	[Export] public InventoryData Inventory { get; set; }
 }

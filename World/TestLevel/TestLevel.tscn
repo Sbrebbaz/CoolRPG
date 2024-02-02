@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://0q5qnu4sd5vn"]
 
 [ext_resource type="TileSet" uid="uid://4iinm0u2d8ru" path="res://Assets/Tiles/CityTiles/CityTiles.tres" id="1_58bkl"]
-[ext_resource type="PackedScene" uid="uid://oj378wnpvf2b" path="res://Characters/Player/Player.tscn" id="2_bl1wh"]
-[ext_resource type="PackedScene" uid="uid://d0o4v736hm8ex" path="res://Characters/Enemy/Enemy.tscn" id="3_6nyn6"]
-[ext_resource type="PackedScene" uid="uid://v5xjog40x55q" path="res://Characters/Sign/Sign.tscn" id="4_u1pr1"]
+[ext_resource type="PackedScene" uid="uid://oj378wnpvf2b" path="res://World/Player/Player.tscn" id="2_bl1wh"]
+[ext_resource type="PackedScene" uid="uid://d0o4v736hm8ex" path="res://World/Enemy/Enemy.tscn" id="3_6nyn6"]
+[ext_resource type="PackedScene" uid="uid://v5xjog40x55q" path="res://World/Sign/Sign.tscn" id="4_u1pr1"]
 [ext_resource type="Texture2D" uid="uid://0o62r2wu40pi" path="res://Assets/test images/1.png" id="5_hb0h7"]
 [ext_resource type="Script" path="res://Resources/Models/DialogLineBase.cs" id="6_a76ot"]
 [ext_resource type="Texture2D" uid="uid://cv6mm30ibtvgv" path="res://Assets/test images/5.png" id="7_2yktx"]

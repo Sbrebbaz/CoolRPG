@@ -6,13 +6,13 @@ public partial class Player : CharacterBody2D
 {
 	[Export] public PlayerBase PlayerBase;
 
-	private AnimatedSprite2D AnimatedSprite2D { get; set; }
+	private AnimatedSprite2D _animatedSprite2D;
 	private GameManager _gameManager;
 
 	public override void _Ready()
 	{
 		base._Ready();
-		AnimatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_gameManager = GetNode<GameManager>("/root/GameManager");
 	}
 
@@ -29,12 +29,12 @@ public partial class Player : CharacterBody2D
 		Vector2 velocity = Velocity;
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
 		float movementSpeed = PlayerBase.Speed;
-		AnimatedSprite2D.SpeedScale = 1f;
+		_animatedSprite2D.SpeedScale = 1f;
 
 		if (Input.IsActionPressed("ui_run"))
 		{
 			movementSpeed *= PlayerBase.RunningMultiplier;
-			AnimatedSprite2D.SpeedScale *= PlayerBase.RunningMultiplier;
+			_animatedSprite2D.SpeedScale *= PlayerBase.RunningMultiplier;
 		}
 
 		ManageMovementAnimation(direction);
@@ -58,15 +58,15 @@ public partial class Player : CharacterBody2D
 	{
 		if (direction.X != 0)
 		{
-			AnimatedSprite2D.Play((direction.X > 0) ? "walk_right" : "walk_left");
+			_animatedSprite2D.Play((direction.X > 0) ? "walk_right" : "walk_left");
 		}
 		else if (direction.Y != 0)
 		{
-			AnimatedSprite2D.Play((direction.Y > 0) ? "walk_down" : "walk_up");
+			_animatedSprite2D.Play((direction.Y > 0) ? "walk_down" : "walk_up");
 		}
 		else
 		{
-			AnimatedSprite2D.Play("idle");
+			_animatedSprite2D.Play("idle");
 		}
 	}
 }

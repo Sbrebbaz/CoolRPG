@@ -1,6 +1,7 @@
 using Godot;
 using static Enumerators;
 
+[GlobalClass]
 public partial class SkillBase : Resource
 {
 	[Export] public string SkillName { get; set; } = string.Empty;
