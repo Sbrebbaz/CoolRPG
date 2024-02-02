@@ -14,7 +14,7 @@ public partial class Sign : CharacterBody2D
 		_gameManager = GetNode<GameManager>("/root/GameManager");
 		isPlayerCloseEnough = false;
 		isDialogDisplayed = false;
-		Dialog.DialogEnded += Dialog_DialogEnded;
+		Dialog.DialogEndedEVT += Dialog_DialogEnded;
 	}
 
 	private void Dialog_DialogEnded(object sender, EventArgs e)

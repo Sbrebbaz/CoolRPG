@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1e5r6uxhjm1j"]
+
+[ext_resource type="PackedScene" uid="uid://cxvsbdegn2mly" path="res://Scenes/BattleMenu/BattleMenu.tscn" id="1_pkc54"]
+
+[node name="Battle" type="Node2D"]
+
+[node name="BattleMenu" parent="." instance=ExtResource("1_pkc54")]

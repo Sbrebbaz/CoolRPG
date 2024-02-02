@@ -25,4 +25,13 @@ public partial class Enumerators : Node
 		Bitter = 16,
 		Umami = 32,
 	}
+	[Flags]
+	public enum BattleMenuSelection
+	{
+		Idle = 1,
+		Enemy = 2,
+		Attack = 4,
+		Examine = 8,
+		Defend = 16
+	}
 }

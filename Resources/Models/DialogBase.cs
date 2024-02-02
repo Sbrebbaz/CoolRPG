@@ -8,8 +8,8 @@ public partial class DialogBase : Resource
 	[Export] public Array<DialogLineBase> DialogLines { get; set; }
 	private int _dialogLineIndex = 0;
 
-	public event EventHandler<DialogLineBase> DialogLineChanged;
-	public event EventHandler DialogEnded;
+	public event EventHandler<DialogLineBase> DialogLineChangedEVT;
+	public event EventHandler DialogEndedEVT;
 
 	public DialogBase()
 	{
@@ -27,11 +27,11 @@ public partial class DialogBase : Resource
 		if (_dialogLineIndex >= DialogLines.Count)
 		{
 			_dialogLineIndex = -1;
-			DialogEnded?.Invoke(this, EventArgs.Empty);
+			DialogEndedEVT?.Invoke(this, EventArgs.Empty);
 		}
 		else
 		{
-			DialogLineChanged?.Invoke(this, GetCurrentLine());
+			DialogLineChangedEVT?.Invoke(this, GetCurrentLine());
 		}
 		return _dialogLineIndex;
 	}
