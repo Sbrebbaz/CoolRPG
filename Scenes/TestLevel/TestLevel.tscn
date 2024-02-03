@@ -1,46 +1,29 @@
-[gd_scene load_steps=16 format=3 uid="uid://0q5qnu4sd5vn"]
+[gd_scene load_steps=12 format=3 uid="uid://0q5qnu4sd5vn"]
 
 [ext_resource type="TileSet" uid="uid://4iinm0u2d8ru" path="res://Assets/Tiles/CityTiles/CityTiles.tres" id="1_58bkl"]
 [ext_resource type="PackedScene" uid="uid://oj378wnpvf2b" path="res://Scenes/Player/Player.tscn" id="2_bl1wh"]
 [ext_resource type="PackedScene" uid="uid://d0o4v736hm8ex" path="res://Scenes/Enemy/Enemy.tscn" id="3_6nyn6"]
 [ext_resource type="PackedScene" uid="uid://v5xjog40x55q" path="res://Scenes/Sign/Sign.tscn" id="4_u1pr1"]
-[ext_resource type="Texture2D" uid="uid://0o62r2wu40pi" path="res://Assets/test images/1.png" id="5_hb0h7"]
+[ext_resource type="Resource" uid="uid://1m0jubyibfk7" path="res://Resources/Instances/SbrebbazCharacterText.tres" id="5_mf3g2"]
 [ext_resource type="Script" path="res://Resources/Models/DialogLineBase.cs" id="6_a76ot"]
-[ext_resource type="Texture2D" uid="uid://cv6mm30ibtvgv" path="res://Assets/test images/5.png" id="7_2yktx"]
+[ext_resource type="Resource" uid="uid://ctkw1o3vo7yho" path="res://Resources/Instances/PainterCharacterText.tres" id="7_ttjns"]
 [ext_resource type="Script" path="res://Resources/Models/DialogBase.cs" id="8_eeg1v"]
-[ext_resource type="Texture2D" uid="uid://hcan4m2od3f" path="res://Assets/test images/4.png" id="9_aajwk"]
 
-[sub_resource type="Resource" id="Resource_icd1p"]
+[sub_resource type="Resource" id="Resource_mmro8"]
 script = ExtResource("6_a76ot")
-Title = "Sbrebbaz"
+DialogBaseData = ExtResource("5_mf3g2")
 Text = "This is a sign!"
-Sprite = ExtResource("5_hb0h7")
+FontSize = 6
 
-[sub_resource type="Resource" id="Resource_ws5ks"]
+[sub_resource type="Resource" id="Resource_2qrkg"]
 script = ExtResource("6_a76ot")
-Title = "Cool"
+DialogBaseData = ExtResource("7_ttjns")
 Text = "Rise and Sign!"
-Sprite = ExtResource("7_2yktx")
+FontSize = 12
 
-[sub_resource type="Resource" id="Resource_8sey0"]
+[sub_resource type="Resource" id="Resource_ftgpa"]
 script = ExtResource("8_eeg1v")
-DialogLines = Array[Object]([SubResource("Resource_icd1p"), SubResource("Resource_ws5ks")])
-
-[sub_resource type="Resource" id="Resource_u8u5f"]
-script = ExtResource("6_a76ot")
-Title = "Painter"
-Text = "This sign is different from the other one :O"
-Sprite = ExtResource("9_aajwk")
-
-[sub_resource type="Resource" id="Resource_ukrs1"]
-script = ExtResource("6_a76ot")
-Title = "Painter"
-Text = "It says to read the other sign again"
-Sprite = ExtResource("9_aajwk")
-
-[sub_resource type="Resource" id="Resource_ep565"]
-script = ExtResource("8_eeg1v")
-DialogLines = Array[Object]([SubResource("Resource_u8u5f"), SubResource("Resource_ukrs1")])
+DialogLines = Array[Object]([SubResource("Resource_mmro8"), SubResource("Resource_2qrkg")])
 
 [node name="TestLevel" type="Node2D"]
 
@@ -56,9 +39,5 @@ position = Vector2(-392, -24)
 position = Vector2(256, -160)
 
 [node name="Sign" parent="." instance=ExtResource("4_u1pr1")]
-position = Vector2(-272, -304)
-Dialog = SubResource("Resource_8sey0")
-
-[node name="Sign2" parent="." instance=ExtResource("4_u1pr1")]
-position = Vector2(-176, -304)
-Dialog = SubResource("Resource_ep565")
+position = Vector2(-256, -304)
+Dialog = SubResource("Resource_ftgpa")

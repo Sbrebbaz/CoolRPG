@@ -14,7 +14,13 @@ public partial class Dialog : CanvasLayer
 		_sprite = GetNode<Sprite2D>("Panel/Sprite");
 
 		_title.Text = dialogLine.Title;
+		_title.AddThemeFontOverride("font", dialogLine.Font);
+		_title.AddThemeFontSizeOverride("font_size", dialogLine.FontSize);
+
 		_message.Text = dialogLine.Text;
+		_message.AddThemeFontOverride("normal_font", dialogLine.Font);
+		_message.AddThemeFontSizeOverride("normal_font_size", dialogLine.TitleFontSize);
+
 		_sprite.Texture = (Texture2D)dialogLine.Sprite;
 	}
 

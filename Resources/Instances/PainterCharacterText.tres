@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogCharacterBase" load_steps=4 format=3 uid="uid://ctkw1o3vo7yho"]
+
+[ext_resource type="FontFile" uid="uid://b6jd3q8l1umdt" path="res://Assets/Fonts/Common/scream_when_youre_ready_to_die.ttf" id="1_2yc0g"]
+[ext_resource type="Texture2D" uid="uid://hcan4m2od3f" path="res://Assets/test images/4.png" id="2_51v14"]
+[ext_resource type="Script" path="res://Resources/Models/DialogCharacterBase.cs" id="3_kymcr"]
+
+[resource]
+script = ExtResource("3_kymcr")
+Title = "Painter beef"
+Sprite = ExtResource("2_51v14")
+Font = ExtResource("1_2yc0g")

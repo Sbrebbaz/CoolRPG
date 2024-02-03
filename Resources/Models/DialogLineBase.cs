@@ -5,23 +5,21 @@ using System.ComponentModel;
 [GlobalClass]
 public partial class DialogLineBase : Resource
 {
-	[Export] public string Title { get; set; } = string.Empty;
+	[Export] public DialogCharacterBase DialogBaseData { get; set; }
 	[Export] public string Text { get; set; } = string.Empty;
-	[Export] public Texture Sprite { get; set; }
+	[Export] public int FontSize { get; set; } = 18;
+
+	public string Title { get { return DialogBaseData.Title; } }
+	public Texture Sprite { get { return DialogBaseData.Sprite; } }
+	public Font Font { get { return DialogBaseData.Font; } }
+	public int TitleFontSize { get { return DialogBaseData.FontSize; } }
 
 	public DialogLineBase() { }
 
-	public DialogLineBase(string title, string text)
+	public DialogLineBase(string text, DialogCharacterBase dialogBaseData)
 	{
-		Title = title;
 		Text = text;
-	}
-
-	public DialogLineBase(string title, string text, Texture texture)
-	{
-		Title = title;
-		Text = text;
-		Sprite = texture;
+		DialogBaseData = dialogBaseData;
 	}
 
 }

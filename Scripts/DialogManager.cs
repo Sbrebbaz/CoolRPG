@@ -43,7 +43,7 @@ public partial class DialogManager : Node
 			}
 			catch { }
 		}
-		_dialog = ResourceLoader.Load<PackedScene>("res://World/Dialog/Dialog.tscn").Instantiate<Dialog>();
+		_dialog = ResourceLoader.Load<PackedScene>("res://Scenes/Dialog/Dialog.tscn").Instantiate<Dialog>();
 		_dialog.SetDialog(dialogLineData);
 		_currentCamera.AddChild(_dialog);
 		_dialog.TreeExited += _dialog_TreeExited;
