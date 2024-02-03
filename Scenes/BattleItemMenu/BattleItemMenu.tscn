@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://lbrdnqpc4n02"]
+
+[ext_resource type="Script" path="res://Scenes/BattleItemMenu/BattleItemMenu.cs" id="1_lp48f"]
+[ext_resource type="Texture2D" uid="uid://bss0qesedwmm6" path="res://Assets/Battle menu/ItemButton_Active.png" id="1_ypp2h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnwk2"]
+bg_color = Color(0, 0, 0, 0.705882)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="BattleItemMenu" type="CanvasLayer"]
+script = ExtResource("1_lp48f")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 440.0
+offset_top = 192.0
+offset_right = -440.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mnwk2")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(576, 184)
+scale = Vector2(2.66667, 2.66667)
+texture = ExtResource("1_ypp2h")

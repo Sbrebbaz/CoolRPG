@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://dgabyq4u6hrr0" path="res://icon.svg" id="2_wq346"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3n8c2"]
-size = Vector2(16, 16)
+size = Vector2(32, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wcagj"]
-radius = 24.0
+radius = 48.0
 
 [node name="Sign" type="CharacterBody2D"]
 script = ExtResource("1_jp3ep")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.125, 0.125)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_wq346")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

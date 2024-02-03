@@ -15,11 +15,13 @@ public partial class Dialog : CanvasLayer
 
 		_title.Text = dialogLine.Title;
 		_title.AddThemeFontOverride("font", dialogLine.Font);
-		_title.AddThemeFontSizeOverride("font_size", dialogLine.FontSize);
+		_title.AddThemeFontSizeOverride("font_size", dialogLine.TitleFontSize);
+		_title.AddThemeColorOverride("font_color", dialogLine.TitleFontColor);
 
 		_message.Text = dialogLine.Text;
 		_message.AddThemeFontOverride("normal_font", dialogLine.Font);
-		_message.AddThemeFontSizeOverride("normal_font_size", dialogLine.TitleFontSize);
+		_message.AddThemeFontSizeOverride("normal_font_size", dialogLine.FontSize);
+		_message.AddThemeColorOverride("default_color", dialogLine.UseCharacterFontColor ? dialogLine.TitleFontColor : dialogLine.FontColor);
 
 		_sprite.Texture = (Texture2D)dialogLine.Sprite;
 	}

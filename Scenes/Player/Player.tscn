@@ -19,7 +19,7 @@ Type = 1
 Skills = Array[Resource]([])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ke37e"]
-size = Vector2(16, 24)
+size = Vector2(32, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ff86d"]
 atlas = ExtResource("2_hy8cg")
@@ -177,7 +177,6 @@ PlayerBase = SubResource("Resource_wlrdm")
 shape = SubResource("RectangleShape2D_ke37e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_1y8sp")
 animation = &"idle"
 

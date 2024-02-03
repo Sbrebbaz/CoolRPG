@@ -1,7 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1e5r6uxhjm1j"]
+[gd_scene load_steps=5 format=3 uid="uid://b1e5r6uxhjm1j"]
 
 [ext_resource type="PackedScene" uid="uid://cxvsbdegn2mly" path="res://Scenes/BattleMenu/BattleMenu.tscn" id="1_pkc54"]
+[ext_resource type="Script" path="res://Scenes/Battle/Battle.cs" id="1_vnc7a"]
+[ext_resource type="PackedScene" uid="uid://bndqonv8nbv7w" path="res://Scenes/BattleAttackMenu/BattleAttackMenu.tscn" id="2_2fusx"]
+[ext_resource type="PackedScene" uid="uid://lbrdnqpc4n02" path="res://Scenes/BattleItemMenu/BattleItemMenu.tscn" id="3_5ebfu"]
 
 [node name="Battle" type="Node2D"]
+script = ExtResource("1_vnc7a")
 
 [node name="BattleMenu" parent="." instance=ExtResource("1_pkc54")]
+
+[node name="BattleItemMenu" parent="." instance=ExtResource("3_5ebfu")]
+visible = false
+
+[node name="BattleAttackMenu" parent="." instance=ExtResource("2_2fusx")]
+visible = false

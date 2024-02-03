@@ -10,3 +10,4 @@ Title = "Sbrebbaz"
 Sprite = ExtResource("2_uj203")
 Font = ExtResource("1_miavi")
 FontSize = 8
+FontColor = Color(1, 0, 1, 1)

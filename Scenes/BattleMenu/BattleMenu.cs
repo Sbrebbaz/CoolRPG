@@ -33,7 +33,7 @@ public partial class BattleMenu : CanvasLayer
 	{
 		if (Input.IsActionJustPressed("ui_up"))
 		{
-			CurrentBattleMenuSelection = BattleMenuSelection.Enemy;
+			CurrentBattleMenuSelection = BattleMenuSelection.Item;
 		}
 		else if (Input.IsActionJustPressed("ui_down"))
 		{
@@ -63,7 +63,7 @@ public partial class BattleMenu : CanvasLayer
 					_sprite.Play("idle");
 					break;
 				}
-			case BattleMenuSelection.Enemy:
+			case BattleMenuSelection.Item:
 				{
 					_sprite.Animation = "top";
 					_sprite.Play("top");

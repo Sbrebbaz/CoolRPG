@@ -9,3 +9,5 @@ script = ExtResource("3_kymcr")
 Title = "Painter beef"
 Sprite = ExtResource("2_51v14")
 Font = ExtResource("1_2yc0g")
+FontSize = 20
+FontColor = Color(1, 1, 0, 1)
