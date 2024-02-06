@@ -2,9 +2,11 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 public partial class BattleItemMenu : CanvasLayer
 {
+	private GameManager _gameManager;
 	/// <summary>
 	/// 
 	/// </summary>
@@ -23,18 +25,9 @@ public partial class BattleItemMenu : CanvasLayer
 		_itemList = GetNode<ItemList>("Panel/ItemList");
 		_itemList.ItemClicked += _itemList_ItemClicked;
 
-		//LoadItems(new List<ItemDataBase> { new ItemDataBase("1", "DESC 1", ResourceLoader.Load<Texture2D>("res://Assets/test images/1.png")), new ItemDataBase("2", "DESC 2", ResourceLoader.Load<Texture2D>("res://Assets/test images/2.png")) });
+		_gameManager = GetNode<GameManager>("/root/GameManager");
 
-	}
-	/// <summary>
-	/// 
-	/// </summary>
-	/// <param name="index"></param>
-	/// <param name="atPosition"></param>
-	/// <param name="mouseButtonIndex"></param>
-	private void _itemList_ItemClicked(long index, Vector2 atPosition, long mouseButtonIndex)
-	{
-		SelectedItemEVT?.Invoke(this, _items[(int)index]);
+		LoadItems(_gameManager.GetItems());
 	}
 	/// <summary>
 	/// 
@@ -51,5 +44,25 @@ public partial class BattleItemMenu : CanvasLayer
 			index++;
 		}
 		_items = items;
+	}
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="index"></param>
+	/// <param name="atPosition"></param>
+	/// <param name="mouseButtonIndex"></param>
+	private void _itemList_ItemClicked(long index, Vector2 atPosition, long mouseButtonIndex)
+	{
+		SelectedItemEVT?.Invoke(this, _items[(int)index]);
+	}
+	/// <summary>
+	/// 
+	/// </summary>
+	private void _on_item_list_visibility_changed()
+	{
+		if (_itemList != null &&_itemList.Visible)
+		{
+			_itemList.GrabFocus();
+		}
 	}
 }

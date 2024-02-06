@@ -2,7 +2,7 @@ using Godot;
 using System;
 using static Enumerators;
 
-public partial class SceneNavigator : Node
+public partial class SceneNavigator : Node, ISceneNavigator
 {
 	private PauseMenu _pauseMenu;
 	private GameState _currentGameState;
@@ -37,7 +37,6 @@ public partial class SceneNavigator : Node
 					}
 				case GameState.ContinueGame:
 					{
-						
 						GetTree().ChangeSceneToFile("res://Scenes/TestLevel/TestLevel.tscn");
 						break;
 					}
@@ -63,5 +62,10 @@ public partial class SceneNavigator : Node
 					}
 			}
 		}
+	}
+
+	public void NavigateToScene(string scenePath)
+	{
+		GetTree().ChangeSceneToFile(scenePath);
 	}
 }

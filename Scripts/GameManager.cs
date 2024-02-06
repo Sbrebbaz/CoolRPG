@@ -1,16 +1,24 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using static Enumerators;
 
-public partial class GameManager : Node
+public partial class GameManager : Node, IDialogManager, ISceneNavigator, IPlayerManager
 {
 	private SceneNavigator _sceneNavigator;
 	private DialogManager _dialogManager;
+	private PlayerManager _playerManager;
 
 	public override void _Ready()
 	{
 		_sceneNavigator = GetNode<SceneNavigator>("/root/SceneNavigator");
 		_dialogManager = GetNode<DialogManager>("/root/DialogManager");
+		_playerManager = GetNode<PlayerManager>("/root/PlayerManager");
+	}
+
+	public void NavigateToScene(string scenePath)
+	{
+		_sceneNavigator.NavigateToScene(scenePath);
 	}
 
 	public void NavigateToGameState(GameState gameState)
@@ -21,5 +29,20 @@ public partial class GameManager : Node
 	public void ShowDialog(DialogBase dialog)
 	{
 		_dialogManager.ShowDialog(dialog);
+	}
+
+	public void ShowDialog(DialogLineBase dialog)
+	{
+		_dialogManager.ShowDialog(dialog);
+	}
+
+	public List<ItemDataBase> GetItems()
+	{
+		return _playerManager.GetItems();
+	}
+
+	public List<SkillBase> GetSkills()
+	{
+		return _playerManager.GetSkills();
 	}
 }

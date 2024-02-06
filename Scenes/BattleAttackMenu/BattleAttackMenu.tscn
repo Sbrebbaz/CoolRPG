@@ -52,3 +52,5 @@ fixed_icon_size = Vector2i(40, 40)
 position = Vector2(936, 488)
 scale = Vector2(2.82051, 3.04762)
 texture = ExtResource("1_bj8y1")
+
+[connection signal="visibility_changed" from="Panel/ItemList" to="." method="_on_item_list_visibility_changed"]

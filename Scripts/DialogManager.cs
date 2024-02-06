@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Threading;
 
-public partial class DialogManager : Node
+public partial class DialogManager : Node, IDialogManager
 {
 	private Dialog _dialog;
 	private Camera2D _currentCamera;

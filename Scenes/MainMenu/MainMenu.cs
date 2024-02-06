@@ -30,4 +30,9 @@ public partial class MainMenu : MarginContainer
 		_gameManager.NavigateToGameState(GameState.Quit);
 	}
 
+	private void _on_debug_button_pressed()
+	{
+		_gameManager.NavigateToScene("res://Scenes/Battle/Battle.tscn");
+	}
+
 }

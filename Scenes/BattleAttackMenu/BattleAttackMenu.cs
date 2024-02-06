@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public partial class BattleAttackMenu : CanvasLayer
 {
+	private GameManager _gameManager;
 	/// <summary>
 	/// 
 	/// </summary>
@@ -22,24 +23,9 @@ public partial class BattleAttackMenu : CanvasLayer
 		_itemList = GetNode<ItemList>("Panel/ItemList");
 		_itemList.ItemClicked += _itemList_ItemClicked;
 
-		LoadSkills(new List<SkillBase> {
-			new SkillBase("SKILL TEST 1", Enumerators.Element.Bland, "DESC SKILL 1", ResourceLoader.Load<Texture2D>("res://Assets/test images/1.png")),
-			new SkillBase("SKILL TEST 2", Enumerators.Element.Salty, "DESC SKILL 2", ResourceLoader.Load<Texture2D>("res://Assets/test images/2.png")),
-			new SkillBase("SKILL TEST 3", Enumerators.Element.Umami, "DESC SKILL 3", ResourceLoader.Load<Texture2D>("res://Assets/test images/3.png")),
-			new SkillBase("SKILL TEST 4", Enumerators.Element.Sweet, "DESC SKILL 4", ResourceLoader.Load<Texture2D>("res://Assets/test images/4.png")),
-			new SkillBase("SKILL TEST 5", Enumerators.Element.Bitter, "DESC SKILL 5", ResourceLoader.Load<Texture2D>("res://Assets/test images/5.png"))
-			});
+		_gameManager = GetNode<GameManager>("/root/GameManager");
 
-	}
-	/// <summary>
-	/// 
-	/// </summary>
-	/// <param name="index"></param>
-	/// <param name="atPosition"></param>
-	/// <param name="mouseButtonIndex"></param>
-	private void _itemList_ItemClicked(long index, Vector2 atPosition, long mouseButtonIndex)
-	{
-		SelectedSkillEVT?.Invoke(this, _skills[(int)index]);
+		LoadSkills(_gameManager.GetSkills());
 	}
 	/// <summary>
 	/// 
@@ -56,5 +42,25 @@ public partial class BattleAttackMenu : CanvasLayer
 			index++;
 		}
 		_skills = skills;
+	}
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="index"></param>
+	/// <param name="atPosition"></param>
+	/// <param name="mouseButtonIndex"></param>
+	private void _itemList_ItemClicked(long index, Vector2 atPosition, long mouseButtonIndex)
+	{
+		SelectedSkillEVT?.Invoke(this, _skills[(int)index]);
+	}
+	/// <summary>
+	/// 
+	/// </summary>
+	private void _on_item_list_visibility_changed()
+	{
+		if (_itemList != null && _itemList.Visible)
+		{
+			_itemList.GrabFocus();
+		}
 	}
 }
