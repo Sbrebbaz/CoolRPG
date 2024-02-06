@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bndqonv8nbv7w"]
+[gd_scene load_steps=5 format=3 uid="uid://bndqonv8nbv7w"]
 
 [ext_resource type="Texture2D" uid="uid://dtx0s5567rsqs" path="res://Assets/Battle menu/AttackButton_Active.png" id="1_bj8y1"]
 [ext_resource type="Script" path="res://Scenes/BattleAttackMenu/BattleAttackMenu.cs" id="1_q44n0"]
@@ -16,6 +16,9 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0o1u"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [node name="BattleAttackMenu" type="CanvasLayer"]
 script = ExtResource("1_q44n0")
 
@@ -30,6 +33,20 @@ offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ioxi4")
+
+[node name="ItemList" type="ItemList" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029
+anchor_top = 0.037
+anchor_right = 0.971
+anchor_bottom = 0.963
+offset_left = 0.112
+offset_top = 0.0079999
+offset_right = -0.11203
+offset_bottom = -0.00801086
+theme_override_styles/focus = SubResource("StyleBoxFlat_h0o1u")
+fixed_icon_size = Vector2i(40, 40)
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(936, 488)
