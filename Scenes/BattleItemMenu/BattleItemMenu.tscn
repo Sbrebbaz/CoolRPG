@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://lbrdnqpc4n02"]
+[gd_scene load_steps=7 format=3 uid="uid://lbrdnqpc4n02"]
 
 [ext_resource type="Script" path="res://Scenes/BattleItemMenu/BattleItemMenu.cs" id="1_lp48f"]
 [ext_resource type="Texture2D" uid="uid://bss0qesedwmm6" path="res://Assets/Battle menu/ItemButton_Active.png" id="1_ypp2h"]
+[ext_resource type="Texture2D" uid="uid://dtx0s5567rsqs" path="res://Assets/Battle menu/AttackButton_Active.png" id="2_6a468"]
+[ext_resource type="Texture2D" uid="uid://dtbjq7io3uknr" path="res://Assets/Battle menu/DefendButton.png" id="3_ukxso"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnwk2"]
 bg_color = Color(0, 0, 0, 0.705882)
@@ -15,6 +17,9 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_inpph"]
+bg_color = Color(0.937255, 0, 0.937255, 0)
 
 [node name="BattleItemMenu" type="CanvasLayer"]
 script = ExtResource("1_lp48f")
@@ -30,6 +35,27 @@ offset_bottom = -240.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_mnwk2")
+
+[node name="ItemList" type="ItemList" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029
+anchor_top = 0.037
+anchor_right = 0.971
+anchor_bottom = 0.963
+offset_left = 0.112
+offset_top = 0.0079999
+offset_right = -0.11203
+offset_bottom = -0.00801086
+theme_override_styles/focus = SubResource("StyleBoxFlat_inpph")
+item_count = 4
+fixed_icon_size = Vector2i(40, 40)
+item_0/text = "1"
+item_0/icon = ExtResource("2_6a468")
+item_1/text = "2"
+item_1/icon = ExtResource("3_ukxso")
+item_2/text = "4"
+item_3/text = "5"
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(576, 184)
