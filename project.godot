@@ -19,10 +19,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*res://Scripts/GameManager.cs"
-SceneNavigator="*res://Scripts/SceneManager.cs"
-DialogManager="*res://Scripts/DialogManager.cs"
-PlayerManager="*res://Scripts/PlayerManager.cs"
-SoundManager="*res://Scripts/SoundManager.cs"
+DialogManager="*res://Scripts/Managers/DialogManager.cs"
+PlayerManager="*res://Scripts/Managers/PlayerManager.cs"
+SceneManager="*res://Scripts/Managers/SceneManager.cs"
+SoundManager="*res://Scripts/Managers/SoundManager.cs"
+MusicManager="*res://Scripts/Managers/MusicManager.cs"
 
 [display]
 
