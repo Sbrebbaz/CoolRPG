@@ -46,7 +46,7 @@ public partial class GameManager
 		_dialogManager.ShowDialog(dialog);
 	}
 
-	public List<ItemDataBase> GetItems()
+	public List<ItemBase> GetItems()
 	{
 		return _playerManager.GetItems();
 	}
@@ -60,4 +60,9 @@ public partial class GameManager
 	{
 		_soundManager.PlaySound(soundEffectToPlay);
 	}
+
+    public void CloseDialog()
+    {
+		_dialogManager.CloseDialog();
+    }
 }

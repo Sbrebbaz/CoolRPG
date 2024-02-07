@@ -5,8 +5,8 @@ using static Flags;
 
 public partial class PlayerManager : Node, IPlayerManager
 {
-	private List<ItemDataBase> _items = new List<ItemDataBase>();
-	public List<ItemDataBase> GetItems()
+	private List<ItemBase> _items = new List<ItemBase>();
+	public List<ItemBase> GetItems()
 	{
 		return _items;
 	}
@@ -19,19 +19,19 @@ public partial class PlayerManager : Node, IPlayerManager
 
 	public override void _Ready()
 	{
-		_items = new List<ItemDataBase>();
+		_items = new List<ItemBase>();
 		_skills = new List<SkillBase>();
 
-		_items.Add(new ItemDataBase("1", "DESC 1", ResourceLoader.Load<Texture2D>("res://Assets/test images/1.png")));
-		_items.Add(new ItemDataBase("2", "DESC 2", ResourceLoader.Load<Texture2D>("res://Assets/test images/2.png")));
-		_items.Add(new ItemDataBase("3", "DESC 3", ResourceLoader.Load<Texture2D>("res://Assets/test images/3.png")));
-		_items.Add(new ItemDataBase("4", "DESC 4", ResourceLoader.Load<Texture2D>("res://Assets/test images/4.png")));
-		_items.Add(new ItemDataBase("5", "DESC 5", ResourceLoader.Load<Texture2D>("res://Assets/test images/5.png")));
-		_items.Add(new ItemDataBase("6", "DESC 6", ResourceLoader.Load<Texture2D>("res://Assets/test images/1.png")));
-		_items.Add(new ItemDataBase("7", "DESC 7", ResourceLoader.Load<Texture2D>("res://Assets/test images/2.png")));
-		_items.Add(new ItemDataBase("8", "DESC 8", ResourceLoader.Load<Texture2D>("res://Assets/test images/3.png")));
-		_items.Add(new ItemDataBase("9", "DESC 9", ResourceLoader.Load<Texture2D>("res://Assets/test images/4.png")));
-		_items.Add(new ItemDataBase("0", "DESC 0", ResourceLoader.Load<Texture2D>("res://Assets/test images/5.png")));
+		_items.Add(new ItemBase("1", "DESC 1", ResourceLoader.Load<Texture2D>("res://Assets/test images/1.png")));
+		_items.Add(new ItemBase("2", "DESC 2", ResourceLoader.Load<Texture2D>("res://Assets/test images/2.png")));
+		_items.Add(new ItemBase("3", "DESC 3", ResourceLoader.Load<Texture2D>("res://Assets/test images/3.png")));
+		_items.Add(new ItemBase("4", "DESC 4", ResourceLoader.Load<Texture2D>("res://Assets/test images/4.png")));
+		_items.Add(new ItemBase("5", "DESC 5", ResourceLoader.Load<Texture2D>("res://Assets/test images/5.png")));
+		_items.Add(new ItemBase("6", "DESC 6", ResourceLoader.Load<Texture2D>("res://Assets/test images/1.png")));
+		_items.Add(new ItemBase("7", "DESC 7", ResourceLoader.Load<Texture2D>("res://Assets/test images/2.png")));
+		_items.Add(new ItemBase("8", "DESC 8", ResourceLoader.Load<Texture2D>("res://Assets/test images/3.png")));
+		_items.Add(new ItemBase("9", "DESC 9", ResourceLoader.Load<Texture2D>("res://Assets/test images/4.png")));
+		_items.Add(new ItemBase("0", "DESC 0", ResourceLoader.Load<Texture2D>("res://Assets/test images/5.png")));
 
 		_skills.Add(new SkillBase("1", Element.Bland, "DESC 1", ResourceLoader.Load<Texture2D>("res://Assets/test images/1.png")));
 		_skills.Add(new SkillBase("2", Element.Salty, "DESC 2", ResourceLoader.Load<Texture2D>("res://Assets/test images/2.png")));

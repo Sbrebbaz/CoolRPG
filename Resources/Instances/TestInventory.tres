@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="InventoryBase" load_steps=7 format=3 uid="uid://csituihgrcbsx"]
+
+[ext_resource type="Script" path="res://Resources/Models/InventoryBase.cs" id="1_5fv2b"]
+[ext_resource type="Texture2D" uid="uid://0o62r2wu40pi" path="res://Assets/test images/1.png" id="1_sr7tl"]
+[ext_resource type="Script" path="res://Resources/Models/ItemBase.cs" id="2_l55yi"]
+[ext_resource type="Texture2D" uid="uid://dhdhnqdm711ok" path="res://Assets/test images/2.png" id="3_a1gel"]
+
+[sub_resource type="Resource" id="Resource_k0uwq"]
+script = ExtResource("2_l55yi")
+ItemName = "Test1"
+Description = "Snek"
+Sprite = ExtResource("1_sr7tl")
+
+[sub_resource type="Resource" id="Resource_e4x1t"]
+script = ExtResource("2_l55yi")
+ItemName = "Test2"
+Description = "Nedgra"
+Sprite = ExtResource("3_a1gel")
+
+[resource]
+script = ExtResource("1_5fv2b")
+Inventory = Array[Object]([SubResource("Resource_k0uwq"), SubResource("Resource_e4x1t")])

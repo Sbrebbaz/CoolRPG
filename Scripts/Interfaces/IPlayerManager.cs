@@ -2,6 +2,6 @@
 
 public interface IPlayerManager
 {
-	public List<ItemDataBase> GetItems();
+	public List<ItemBase> GetItems();
 	public List<SkillBase> GetSkills();
 }

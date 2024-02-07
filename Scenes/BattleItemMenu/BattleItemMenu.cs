@@ -14,11 +14,11 @@ public partial class BattleItemMenu : CanvasLayer
 	/// <summary>
 	/// 
 	/// </summary>
-	private List<ItemDataBase> _items;
+	private List<ItemBase> _items;
 	/// <summary>
 	/// 
 	/// </summary>
-	public event EventHandler<ItemDataBase> SelectedItemEVT;
+	public event EventHandler<ItemBase> SelectedItemEVT;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -33,11 +33,11 @@ public partial class BattleItemMenu : CanvasLayer
 	/// 
 	/// </summary>
 	/// <param name="items"></param>
-	public void LoadItems(List<ItemDataBase> items)
+	public void LoadItems(List<ItemBase> items)
 	{
 		int index = 0;
 		_itemList.Clear();
-		foreach (ItemDataBase item in items)
+		foreach (ItemBase item in items)
 		{
 			_itemList.AddItem(item.ItemName, (Texture2D)item.Sprite);
 			_itemList.SetItemTooltip(index, item.Description);
