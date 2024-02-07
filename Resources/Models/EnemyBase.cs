@@ -1,6 +1,6 @@
 using Godot;
 using Godot.Collections;
-using static Enumerators;
+using static Flags;
 
 [GlobalClass]
 public partial class EnemyBase : Resource

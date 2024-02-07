@@ -1,5 +1,5 @@
 using Godot;
-using static Enumerators;
+using static Flags;
 
 [GlobalClass]
 public partial class SkillBase : Resource

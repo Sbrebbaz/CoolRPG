@@ -1,7 +1,7 @@
 ﻿using Godot;
 using System;
 using System.Collections.Generic;
-using static Enumerators;
+using static Flags;
 
 public partial class PlayerManager : Node, IPlayerManager
 {

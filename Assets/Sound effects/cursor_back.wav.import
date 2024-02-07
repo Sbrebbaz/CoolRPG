@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bolygxa4f0265"
+path="res://.godot/imported/cursor_back.wav-54e910138c54e4c427bb0333b3e1dd4e.sample"
+
+[deps]
+
+source_file="res://Assets/Sound effects/cursor_back.wav"
+dest_files=["res://.godot/imported/cursor_back.wav-54e910138c54e4c427bb0333b3e1dd4e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

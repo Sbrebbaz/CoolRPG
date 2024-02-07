@@ -22,6 +22,7 @@ GameManager="*res://Scripts/GameManager.cs"
 SceneNavigator="*res://Scripts/SceneManager.cs"
 DialogManager="*res://Scripts/DialogManager.cs"
 PlayerManager="*res://Scripts/PlayerManager.cs"
+SoundManager="*res://Scripts/SoundManager.cs"
 
 [display]
 
