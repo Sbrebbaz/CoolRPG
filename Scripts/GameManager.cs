@@ -3,15 +3,15 @@ using System;
 using System.Collections.Generic;
 using static Enumerators;
 
-public partial class GameManager : Node, IDialogManager, ISceneNavigator, IPlayerManager
+public partial class GameManager : Node, IDialogManager, ISceneManager, IPlayerManager
 {
-	private SceneNavigator _sceneNavigator;
+	private SceneManager _sceneNavigator;
 	private DialogManager _dialogManager;
 	private PlayerManager _playerManager;
 
 	public override void _Ready()
 	{
-		_sceneNavigator = GetNode<SceneNavigator>("/root/SceneNavigator");
+		_sceneNavigator = GetNode<SceneManager>("/root/SceneNavigator");
 		_dialogManager = GetNode<DialogManager>("/root/DialogManager");
 		_playerManager = GetNode<PlayerManager>("/root/PlayerManager");
 	}

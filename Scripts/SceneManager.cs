@@ -2,7 +2,7 @@ using Godot;
 using System;
 using static Enumerators;
 
-public partial class SceneNavigator : Node, ISceneNavigator
+public partial class SceneManager : Node, ISceneManager
 {
 	private PauseMenu _pauseMenu;
 	private GameState _currentGameState;

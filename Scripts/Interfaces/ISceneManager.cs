@@ -1,6 +1,6 @@
 ﻿using static Enumerators;
 
-public interface ISceneNavigator
+public interface ISceneManager
 {
 	public void NavigateToGameState(GameState gameStateToNavigateTo);
 	public void NavigateToScene(string scenePath);
