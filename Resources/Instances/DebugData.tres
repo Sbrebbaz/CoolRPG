@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="DebugBase" load_steps=8 format=3 uid="uid://cq06epqnbgass"]
+
+[ext_resource type="Resource" uid="uid://dgfoev207brvp" path="res://Resources/Instances/TestPlayer2.tres" id="1_8u63x"]
+[ext_resource type="Script" path="res://Resources/Models/DebugBase.cs" id="1_08820"]
+[ext_resource type="Resource" uid="uid://b4gxisy780dqn" path="res://Resources/Instances/TestItem1.tres" id="2_0aqhr"]
+[ext_resource type="Resource" uid="uid://dyg6yvmpwn5tj" path="res://Resources/Instances/TestItem2.tres" id="3_syejw"]
+[ext_resource type="Texture2D" uid="uid://0o62r2wu40pi" path="res://Assets/test images/1.png" id="3_uwkn4"]
+[ext_resource type="Script" path="res://Resources/Models/PlayerBase.cs" id="4_tio0u"]
+
+[sub_resource type="Resource" id="Resource_mq6l7"]
+script = ExtResource("4_tio0u")
+CharacterName = "Eskero"
+Health = 100
+CurrentHealth = 100
+Mana = 10
+CurrentMana = 10
+Attack = 10
+Defense = 10
+Type = 1
+Skills = null
+PlayerIcon = ExtResource("3_uwkn4")
+PlayerBattleSprite = ExtResource("3_uwkn4")
+
+[resource]
+script = ExtResource("1_08820")
+IsDebug = false
+DebugPlayers = Array[Object]([SubResource("Resource_mq6l7")])
+DebugEnemies = Array[Object]([ExtResource("1_8u63x")])
+DebugInventory = Array[Object]([ExtResource("2_0aqhr"), ExtResource("3_syejw"), ExtResource("3_syejw"), ExtResource("3_syejw"), ExtResource("2_0aqhr"), ExtResource("2_0aqhr"), ExtResource("3_syejw")])

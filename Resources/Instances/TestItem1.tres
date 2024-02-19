@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://b4gxisy780dqn"]
+
+[ext_resource type="Texture2D" uid="uid://hcan4m2od3f" path="res://Assets/test images/4.png" id="1_0dxms"]
+[ext_resource type="Script" path="res://Resources/Models/ItemBase.cs" id="1_qw3sx"]
+
+[resource]
+script = ExtResource("1_qw3sx")
+ItemName = "Pokeball"
+Description = "Divide*2 = -3"
+Sprite = ExtResource("1_0dxms")

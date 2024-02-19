@@ -3,130 +3,164 @@ using System;
 using System.Collections.Generic;
 using static Enumerators;
 
-public partial class GameManager 
-	: Node, 
-	IDialogManager, 
-	ISceneManager, 
-	IPlayerManager, 
-	ISoundManager,
-	IMusicManager,
-	IBattleManager
+public partial class GameManager
+    : Node,
+    IDialogManager,
+    ISceneManager,
+    IPlayerManager,
+    ISoundManager,
+    IMusicManager,
+    IBattleManager,
+    IDebugManager
+
 {
-	private SceneManager _sceneManager;
-	private DialogManager _dialogManager;
-	private PlayerManager _playerManager;
-	private SoundManager _soundManager;
-	private MusicManager _musicManager;
-	private BattleManager _battleManager;
+    private SceneManager _sceneManager;
+    private DialogManager _dialogManager;
+    private PlayerManager _playerManager;
+    private SoundManager _soundManager;
+    private MusicManager _musicManager;
+    private BattleManager _battleManager;
+    private DebugManager _debugManager;
 
-	public override void _Ready()
-	{
-		_sceneManager = GetNode<SceneManager>("/root/SceneManager");
-		_dialogManager = GetNode<DialogManager>("/root/DialogManager");
-		_playerManager = GetNode<PlayerManager>("/root/PlayerManager");
-		_soundManager = GetNode<SoundManager>("/root/SoundManager");
-		_musicManager = GetNode<MusicManager>("/root/MusicManager");
-		_battleManager = GetNode<BattleManager>("/root/BattleManager");
-	}
+    public override void _Ready()
+    {
+        _sceneManager = GetNode<SceneManager>("/root/SceneManager");
+        _dialogManager = GetNode<DialogManager>("/root/DialogManager");
+        _playerManager = GetNode<PlayerManager>("/root/PlayerManager");
+        _soundManager = GetNode<SoundManager>("/root/SoundManager");
+        _musicManager = GetNode<MusicManager>("/root/MusicManager");
+        _battleManager = GetNode<BattleManager>("/root/BattleManager");
+        _debugManager = GetNode<DebugManager>("/root/DebugManager");
 
-	#region DialogManager
+    }
 
-	public void ShowDialog(DialogBase dialog)
-	{
-		_dialogManager.ShowDialog(dialog);
-	}
+    #region DialogManager
 
-	public void ShowDialog(DialogLineBase dialog)
-	{
-		_dialogManager.ShowDialog(dialog);
-	}
+    public void ShowDialog(DialogBase dialog)
+    {
+        _dialogManager.ShowDialog(dialog);
+    }
 
-	public void CloseDialog()
-	{
-		_dialogManager.CloseDialog();
-	}
+    public void ShowDialog(DialogLineBase dialog)
+    {
+        _dialogManager.ShowDialog(dialog);
+    }
 
-	#endregion
+    public void CloseDialog()
+    {
+        _dialogManager.CloseDialog();
+    }
 
-	#region SceneManager
+    #endregion
 
-	public void NavigateToGameState(GameState gameState)
-	{
-		_sceneManager.NavigateToGameState(gameState);
-	}
+    #region SceneManager
 
-	public void NavigateToScene(string scenePath)
-	{
-		_sceneManager.NavigateToScene(scenePath);
-	}
+    public void NavigateToGameState(GameState gameState)
+    {
+        _sceneManager.NavigateToGameState(gameState);
+    }
 
-	#endregion
+    public void NavigateToScene(string scenePath)
+    {
+        _sceneManager.NavigateToScene(scenePath);
+    }
 
-	#region PlayerManager
+    #endregion
 
-	public List<ItemBase> GetItems()
-	{
-		return _playerManager.GetItems();
-	}
+    #region PlayerManager
 
-	public void SetItems(List<ItemBase> items)
-	{
-		_playerManager.SetItems(items);
-	}
+    public List<ItemBase> GetItems()
+    {
+        if (_debugManager.IsDebugEnabled())
+        {
+            return _debugManager.GetDebugItems();
+        }
+        else
+        {
+            return _playerManager.GetItems();
+        }
 
-	public List<SkillBase> GetSkills()
-	{
-		return _playerManager.GetSkills();
-	}
+    }
 
-	public void SetSkills(List<SkillBase> skills)
-	{
-		_playerManager.SetSkills(skills);
-	}
+    public void SetItems(List<ItemBase> items)
+    {
+        _playerManager.SetItems(items);
+    }
 
-	public List<PlayerBase> GetPlayers()
-	{
-		return _playerManager.GetPlayers();
-	}
+    public List<SkillBase> GetSkills()
+    {
+        return _playerManager.GetSkills();
+    }
 
-	public void SetPlayers(List<PlayerBase> players)
-	{
-		_playerManager.SetPlayers(players);
-	}
+    public void SetSkills(List<SkillBase> skills)
+    {
+        _playerManager.SetSkills(skills);
+    }
 
-	#endregion
+    public List<PlayerBase> GetPlayers()
+    {
+        return _playerManager.GetPlayers();
+    }
 
-	#region SoundManager
+    public void SetPlayers(List<PlayerBase> players)
+    {
+        _playerManager.SetPlayers(players);
+    }
 
-	public void PlaySound(SoundEffects soundEffectToPlay)
-	{
-		_soundManager.PlaySound(soundEffectToPlay);
-	}
+    #endregion
 
-	#endregion
+    #region SoundManager
 
-	#region MusicManager
+    public void PlaySound(SoundEffects soundEffectToPlay)
+    {
+        _soundManager.PlaySound(soundEffectToPlay);
+    }
 
-	#endregion
+    #endregion
 
-	#region BattleManager
+    #region MusicManager
 
-	public void BuildBattle(List<PlayerBase> playerParty, List<PlayerBase> enemyParty)
-	{
-		_battleManager.BuildBattle(playerParty, enemyParty);
-	}
+    #endregion
 
-	public void BuildBattle(PartyData playerParty, PartyData enemyParty)
-	{
-		_battleManager.BuildBattle(playerParty, enemyParty);
-	}
+    #region BattleManager
 
-	public void EndBattle()
-	{
-		_battleManager.EndBattle();
-	}
+    public void BuildBattle(List<PlayerBase> playerParty, List<PlayerBase> enemyParty)
+    {
+        _battleManager.BuildBattle(playerParty, enemyParty);
+    }
 
+    public void BuildBattle(PartyData playerParty, PartyData enemyParty)
+    {
+        _battleManager.BuildBattle(playerParty, enemyParty);
+    }
 
-	#endregion
+    public void EndBattle()
+    {
+        _battleManager.EndBattle();
+    }
+
+    #endregion
+
+    #region DebugManager 
+    public List<PlayerBase> GetDebugPlayers()
+    {
+        return _debugManager.GetDebugPlayers();
+    }
+
+    public List<PlayerBase> GetDebugEnemies()
+    {
+        return _debugManager.GetDebugEnemies();
+    }
+
+    public List<ItemBase> GetDebugItems()
+    {
+        return _debugManager.GetDebugItems();
+    }
+
+    public bool IsDebugEnabled()
+    {
+        return _debugManager.IsDebugEnabled();
+    }
+    #endregion
 
 }

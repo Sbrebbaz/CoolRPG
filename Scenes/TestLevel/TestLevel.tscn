@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://0q5qnu4sd5vn"]
+[gd_scene load_steps=17 format=3 uid="uid://0q5qnu4sd5vn"]
 
 [ext_resource type="TileSet" uid="uid://4iinm0u2d8ru" path="res://Assets/Tiles/CityTiles/CityTiles.tres" id="1_58bkl"]
 [ext_resource type="PackedScene" uid="uid://oj378wnpvf2b" path="res://Scenes/Player/Player.tscn" id="2_bl1wh"]
 [ext_resource type="PackedScene" uid="uid://d0o4v736hm8ex" path="res://Scenes/Enemy/Enemy.tscn" id="3_6nyn6"]
 [ext_resource type="Script" path="res://Resources/Models/MovementBase.cs" id="3_xef58"]
 [ext_resource type="PackedScene" uid="uid://v5xjog40x55q" path="res://Scenes/Sign/Sign.tscn" id="4_u1pr1"]
+[ext_resource type="Script" path="res://Resources/Models/EnemyBase.cs" id="5_cinoo"]
 [ext_resource type="Resource" uid="uid://1m0jubyibfk7" path="res://Resources/Instances/SbrebbazCharacterText.tres" id="5_mf3g2"]
 [ext_resource type="Script" path="res://Resources/Models/DialogLineBase.cs" id="6_a76ot"]
 [ext_resource type="Resource" uid="uid://ctkw1o3vo7yho" path="res://Resources/Instances/PainterCharacterText.tres" id="7_ttjns"]
@@ -14,6 +15,20 @@
 script = ExtResource("3_xef58")
 Speed = 300.0
 RunningMultiplier = 1.5
+
+[sub_resource type="Resource" id="Resource_2h2uc"]
+script = ExtResource("5_cinoo")
+BaseSpeed = 300.0
+RoamingArea = 100.0
+PlayerDetectionArea = 200.0
+PlayerHitArea = 32.0
+
+[sub_resource type="Resource" id="Resource_7fmyb"]
+script = ExtResource("5_cinoo")
+BaseSpeed = 300.0
+RoamingArea = 100.0
+PlayerDetectionArea = 200.0
+PlayerHitArea = 32.0
 
 [sub_resource type="Resource" id="Resource_mmro8"]
 script = ExtResource("6_a76ot")
@@ -48,10 +63,11 @@ MovementBase = SubResource("Resource_ak7wj")
 
 [node name="Enemy2" parent="." instance=ExtResource("3_6nyn6")]
 position = Vector2(256, 72)
-RoamingArea = 0.0
+EnemyBehaviour = SubResource("Resource_2h2uc")
 
 [node name="Enemy" parent="." instance=ExtResource("3_6nyn6")]
 position = Vector2(256, -160)
+EnemyBehaviour = SubResource("Resource_7fmyb")
 
 [node name="Sign" parent="." instance=ExtResource("4_u1pr1")]
 position = Vector2(-256, -304)

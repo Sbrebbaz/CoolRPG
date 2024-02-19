@@ -22,10 +22,10 @@ public partial class Enemy : CharacterBody2D
 
 		_animatedSprite2D = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
 		_animatedSprite2D.Play("idle");
-		Velocity = Vector2.Left * BaseSpeed;
+		Velocity = Vector2.Left * EnemyBehaviour.BaseSpeed;
 
-		((CircleShape2D)GetNode<Area2D>("PlayerDetection").GetNode<CollisionShape2D>("PlayerDetectionArea").Shape).Radius = PlayerDetectionArea;
-		((CircleShape2D)GetNode<Area2D>("HitDetection").GetNode<CollisionShape2D>("HitDetectionArea").Shape).Radius = PlayerHitArea;
+		((CircleShape2D)GetNode<Area2D>("PlayerDetection").GetNode<CollisionShape2D>("PlayerDetectionArea").Shape).Radius = EnemyBehaviour.PlayerDetectionArea;
+		((CircleShape2D)GetNode<Area2D>("HitDetection").GetNode<CollisionShape2D>("HitDetectionArea").Shape).Radius = EnemyBehaviour.PlayerHitArea;
 
 		base._Ready();
 	}
@@ -33,7 +33,7 @@ public partial class Enemy : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		//Retrieve current direction
-		Vector2 direction = Velocity / BaseSpeed;
+		Vector2 direction = Velocity / EnemyBehaviour.BaseSpeed;
 
 		//Player detected
 		//Move towards player
@@ -46,12 +46,12 @@ public partial class Enemy : CharacterBody2D
 		else
 		{
 			if (Position.DistanceTo(StartingPosition) < 1
-				|| Position.DistanceTo(StartingPosition) > RoamingArea
-				|| GetSlideCollisionCount() > 0)
+				|| Position.DistanceTo(StartingPosition) > EnemyBehaviour.RoamingArea
+                || GetSlideCollisionCount() > 0)
 			{
 				Vector2 newDirection = new Vector2(
-					_randomNumberGeneration.RandfRange(0, RoamingArea) - RoamingArea / 2,
-					_randomNumberGeneration.RandfRange(0, RoamingArea) - RoamingArea / 2);
+					_randomNumberGeneration.RandfRange(0, EnemyBehaviour.RoamingArea) - EnemyBehaviour.RoamingArea / 2,
+					_randomNumberGeneration.RandfRange(0, EnemyBehaviour.RoamingArea) - EnemyBehaviour.RoamingArea / 2);
 
 				direction = (StartingPosition - Position + newDirection).Normalized();
 			}
@@ -61,7 +61,7 @@ public partial class Enemy : CharacterBody2D
 		ManageMovementAnimation();
 
 		//New direction and move management
-		Velocity = direction * BaseSpeed;
+		Velocity = direction * EnemyBehaviour.BaseSpeed;
 		MoveAndSlide();
 		base._PhysicsProcess(delta);
 	}
@@ -95,7 +95,7 @@ public partial class Enemy : CharacterBody2D
 		if (body is Player)
 		{
 			PlayerDetected = (Player)body;
-			EmitSignal(SignalName.PlayerCloseDetection);
+			EmitSignal(EnemyBase.SignalName.PlayerCloseDetection);
 		}
 	}
 
@@ -121,7 +121,7 @@ public partial class Enemy : CharacterBody2D
 	{
 		if (body is Player)
 		{
-			EmitSignal(SignalName.PlayerHitDetection);
+			EmitSignal(EnemyBase.SignalName.PlayerHitDetection);
 			//TODO UPDATE TO START A PLAYER BATTLE !
 			QueueFree();
 		}
