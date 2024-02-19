@@ -1,8 +1,6 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 
 public partial class BattleItemMenu : CanvasLayer
 {

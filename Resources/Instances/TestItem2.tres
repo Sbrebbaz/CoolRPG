@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemBase" load_steps=3 format=3 uid="uid://dyg6yvmpwn5tj"]
+
+[ext_resource type="Script" path="res://Resources/Models/ItemBase.cs" id="1_5mthx"]
+[ext_resource type="Texture2D" uid="uid://cv6mm30ibtvgv" path="res://Assets/test images/5.png" id="1_v2lq0"]
+
+[resource]
+script = ExtResource("1_5mthx")
+ItemName = "MasterBall"
+Description = "2+2 =4 -1 =3 (quick math)"
+Sprite = ExtResource("1_v2lq0")
