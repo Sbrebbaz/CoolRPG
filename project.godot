@@ -24,6 +24,7 @@ PlayerManager="*res://Scripts/Managers/PlayerManager.cs"
 SceneManager="*res://Scripts/Managers/SceneManager.cs"
 SoundManager="*res://Scripts/Managers/SoundManager.cs"
 MusicManager="*res://Scripts/Managers/MusicManager.cs"
+BattleManager="*res://Scripts/Managers/BattleManager.cs"
 
 [display]
 

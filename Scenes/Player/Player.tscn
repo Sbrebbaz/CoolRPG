@@ -1,22 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://oj378wnpvf2b"]
+[gd_scene load_steps=22 format=3 uid="uid://oj378wnpvf2b"]
 
 [ext_resource type="Script" path="res://Scenes/Player/Player.cs" id="1_1nlr0"]
 [ext_resource type="Texture2D" uid="uid://cmsneq32qvce7" path="res://Assets/Characters sprites/ReaperWalkSheet.png" id="2_hy8cg"]
-[ext_resource type="Script" path="res://Resources/Models/PlayerBase.cs" id="2_irar8"]
-
-[sub_resource type="Resource" id="Resource_wlrdm"]
-script = ExtResource("2_irar8")
-CharacterName = "TEST PLAYER"
-Health = 100
-CurrentHealth = 100
-Speed = 300.0
-RunningMultiplier = 1.5
-Mana = 10
-CurrentMana = 10
-Attack = 10
-Defense = 10
-Type = 1
-Skills = Array[Resource]([])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ke37e"]
 size = Vector2(32, 48)
@@ -171,7 +156,6 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_1nlr0")
-PlayerBase = SubResource("Resource_wlrdm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ke37e")

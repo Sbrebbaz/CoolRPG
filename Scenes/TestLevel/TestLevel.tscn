@@ -1,13 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://0q5qnu4sd5vn"]
+[gd_scene load_steps=14 format=3 uid="uid://0q5qnu4sd5vn"]
 
 [ext_resource type="TileSet" uid="uid://4iinm0u2d8ru" path="res://Assets/Tiles/CityTiles/CityTiles.tres" id="1_58bkl"]
 [ext_resource type="PackedScene" uid="uid://oj378wnpvf2b" path="res://Scenes/Player/Player.tscn" id="2_bl1wh"]
 [ext_resource type="PackedScene" uid="uid://d0o4v736hm8ex" path="res://Scenes/Enemy/Enemy.tscn" id="3_6nyn6"]
+[ext_resource type="Script" path="res://Resources/Models/MovementBase.cs" id="3_xef58"]
 [ext_resource type="PackedScene" uid="uid://v5xjog40x55q" path="res://Scenes/Sign/Sign.tscn" id="4_u1pr1"]
 [ext_resource type="Resource" uid="uid://1m0jubyibfk7" path="res://Resources/Instances/SbrebbazCharacterText.tres" id="5_mf3g2"]
 [ext_resource type="Script" path="res://Resources/Models/DialogLineBase.cs" id="6_a76ot"]
 [ext_resource type="Resource" uid="uid://ctkw1o3vo7yho" path="res://Resources/Instances/PainterCharacterText.tres" id="7_ttjns"]
 [ext_resource type="Script" path="res://Resources/Models/DialogBase.cs" id="8_eeg1v"]
+
+[sub_resource type="Resource" id="Resource_ak7wj"]
+script = ExtResource("3_xef58")
+Speed = 300.0
+RunningMultiplier = 1.5
 
 [sub_resource type="Resource" id="Resource_mmro8"]
 script = ExtResource("6_a76ot")
@@ -27,7 +33,7 @@ FontColor = Color(1, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_ftgpa"]
 script = ExtResource("8_eeg1v")
-DialogLines = Array[Object]([SubResource("Resource_mmro8"), SubResource("Resource_2qrkg")])
+DialogLines = Array[Object]([SubResource("Resource_mmro8"), SubResource("Resource_2qrkg"), null])
 
 [node name="TestLevel" type="Node2D"]
 
@@ -38,6 +44,11 @@ layer_0/tile_data = PackedInt32Array(-1, 524288, 0, -327688, 524288, 0, -262152,
 
 [node name="Player" parent="." instance=ExtResource("2_bl1wh")]
 position = Vector2(-392, -24)
+MovementBase = SubResource("Resource_ak7wj")
+
+[node name="Enemy2" parent="." instance=ExtResource("3_6nyn6")]
+position = Vector2(256, 72)
+RoamingArea = 0.0
 
 [node name="Enemy" parent="." instance=ExtResource("3_6nyn6")]
 position = Vector2(256, -160)

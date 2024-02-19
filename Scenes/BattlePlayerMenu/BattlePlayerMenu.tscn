@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmktd2v301s0l"]
+
+[ext_resource type="Script" path="res://Scenes/BattlePlayerMenu/BattlePlayerMenu.cs" id="1_27djt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5pim"]
+bg_color = Color(0, 0, 0, 0.705882)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvhl3"]
+bg_color = Color(0.937255, 0, 0.937255, 0)
+
+[node name="BattlePlayerMenu" type="CanvasLayer"]
+script = ExtResource("1_27djt")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 192.0
+offset_bottom = 192.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_v5pim")
+
+[node name="ItemList" type="ItemList" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029
+anchor_top = 0.037
+anchor_right = 0.971
+anchor_bottom = 0.963
+offset_left = 0.112
+offset_top = 0.0079999
+offset_right = -0.11203
+offset_bottom = -0.00801086
+theme_override_styles/focus = SubResource("StyleBoxFlat_gvhl3")
+fixed_icon_size = Vector2i(40, 40)

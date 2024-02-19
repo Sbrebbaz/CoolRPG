@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PlayerBase" load_steps=3 format=3 uid="uid://dgfoev207brvp"]
+
+[ext_resource type="Script" path="res://Resources/Models/PlayerBase.cs" id="1_fbeqr"]
+[ext_resource type="Texture2D" uid="uid://cv6mm30ibtvgv" path="res://Assets/test images/5.png" id="1_rk1qg"]
+
+[resource]
+script = ExtResource("1_fbeqr")
+CharacterName = "TestPlayer2"
+Health = 100
+CurrentHealth = 100
+Speed = 300.0
+RunningMultiplier = 1.5
+Mana = 10
+CurrentMana = 10
+Attack = 10
+Defense = 10
+Type = 1
+Skills = null
+PlayerIcon = ExtResource("1_rk1qg")
+PlayerBattleSprite = ExtResource("1_rk1qg")

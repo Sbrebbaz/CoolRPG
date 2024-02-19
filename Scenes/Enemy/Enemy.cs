@@ -4,13 +4,7 @@ using System.Diagnostics;
 
 public partial class Enemy : CharacterBody2D
 {
-	[Export] public float BaseSpeed = 300f;
-	[Export] public float RoamingArea = 100f;
-	[Export] public float PlayerDetectionArea = 200f;
-	[Export] public float PlayerHitArea = 32f;
-
-	[Signal] public delegate void PlayerHitDetectionEventHandler();
-	[Signal] public delegate void PlayerCloseDetectionEventHandler();
+	[Export] public EnemyBase EnemyBehaviour;
 
 	public Player PlayerDetected;
 	public Vector2 StartingPosition;

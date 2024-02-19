@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PartyData" load_steps=3 format=3 uid="uid://5isoqc5yj10y"]
+
+[ext_resource type="Script" path="res://Resources/Models/PartyData.cs" id="1_4ayrc"]
+[ext_resource type="Resource" uid="uid://dgfoev207brvp" path="res://Resources/Instances/TestPlayer2.tres" id="1_yvj0w"]
+
+[resource]
+script = ExtResource("1_4ayrc")
+Players = Array[Object]([ExtResource("1_yvj0w")])

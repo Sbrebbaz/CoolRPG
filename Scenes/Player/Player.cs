@@ -4,7 +4,7 @@ using static Enumerators;
 
 public partial class Player : CharacterBody2D
 {
-	[Export] public PlayerBase PlayerBase;
+	[Export] public MovementBase MovementBase;
 
 	private AnimatedSprite2D _animatedSprite2D;
 	private GameManager _gameManager;
@@ -28,13 +28,13 @@ public partial class Player : CharacterBody2D
 	{
 		Vector2 velocity = Velocity;
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		float movementSpeed = PlayerBase.Speed;
+		float movementSpeed = MovementBase.Speed;
 		_animatedSprite2D.SpeedScale = 1f;
 
 		if (Input.IsActionPressed("ui_run"))
 		{
-			movementSpeed *= PlayerBase.RunningMultiplier;
-			_animatedSprite2D.SpeedScale *= PlayerBase.RunningMultiplier;
+			movementSpeed *= MovementBase.RunningMultiplier;
+			_animatedSprite2D.SpeedScale *= MovementBase.RunningMultiplier;
 		}
 
 		ManageMovementAnimation(direction);
