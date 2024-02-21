@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://djc852tpw42ff"]
+
+[ext_resource type="Texture2D" uid="uid://0o62r2wu40pi" path="res://Assets/test images/1.png" id="1_3yrov"]
+[ext_resource type="Script" path="res://Scenes/BattleBackground/BattleBackground.cs" id="1_725y6"]
+[ext_resource type="Texture2D" uid="uid://hcan4m2od3f" path="res://Assets/test images/4.png" id="3_87y5p"]
+
+[node name="BattleBackground" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_725y6")
+
+[node name="BattleContainer" type="VBoxContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/separation = 250
+alignment = 1
+
+[node name="PlayersContainer" type="HBoxContainer" parent="BattleContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="BattleContainer/PlayersContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_3yrov")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="EnemiesContainer" type="HBoxContainer" parent="BattleContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="BattleContainer/EnemiesContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("3_87y5p")
+expand_mode = 3
+stretch_mode = 5
