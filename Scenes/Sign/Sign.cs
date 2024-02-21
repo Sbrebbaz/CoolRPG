@@ -45,14 +45,16 @@ public partial class Sign : CharacterBody2D
         if (body is Player)
         {
             isPlayerCloseEnough = true;
+            ((Player)body).NarrativeLabelVisible = true;
+            ((Player)body).NarrativeLabelText = "Read";
         }
     }
-
     public void _on_area_2d_body_exited(Node2D body)
     {
         if (body is Player)
         {
             isPlayerCloseEnough = false;
+            ((Player)body).NarrativeLabelVisible = false;
         }
     }
 
