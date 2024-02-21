@@ -36,8 +36,8 @@ public partial class Sign : CharacterBody2D
         if (!isPlayerCloseEnough &&
             isDialogDisplayed)
         {
-            _gameManager.CloseDialog();
-        }
+            _gameManager.EndDialog();
+		}
     }
 
     public void _on_area_2d_body_entered(Node2D body)

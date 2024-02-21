@@ -46,16 +46,21 @@ public partial class GameManager
         _dialogManager.ShowDialog(dialog);
     }
 
-    public void CloseDialog()
-    {
-        _dialogManager.CloseDialog();
-    }
+	public void CloseDialog()
+	{
+		_dialogManager.CloseDialog();
+	}
 
+	public void EndDialog()
+	{
+		_dialogManager.EndDialog();
+	}
+	
     #endregion
 
-    #region SceneManager
+	#region SceneManager
 
-    public void NavigateToGameState(GameState gameState)
+	public void NavigateToGameState(GameState gameState)
     {
         _sceneManager.NavigateToGameState(gameState);
     }

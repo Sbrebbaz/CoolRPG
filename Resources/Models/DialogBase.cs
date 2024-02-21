@@ -21,6 +21,11 @@ public partial class DialogBase : Resource
 		_dialogLineIndex = 0;
 	}
 
+	public void ForceEndDialog()
+	{
+		DialogEndedEVT?.Invoke(this, EventArgs.Empty);
+	}
+
 	public int GetNextIndex()
 	{
 		_dialogLineIndex++;

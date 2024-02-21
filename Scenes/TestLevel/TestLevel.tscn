@@ -48,7 +48,7 @@ FontColor = Color(1, 1, 1, 1)
 
 [sub_resource type="Resource" id="Resource_ftgpa"]
 script = ExtResource("8_eeg1v")
-DialogLines = Array[Object]([SubResource("Resource_mmro8"), SubResource("Resource_2qrkg"), null])
+DialogLines = Array[Object]([SubResource("Resource_mmro8"), SubResource("Resource_2qrkg")])
 
 [node name="TestLevel" type="Node2D"]
 
